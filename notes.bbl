@@ -1,0 +1,104 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
+
+\bibitem{wang2015three}
+Q.~Wang and X.~Zhao, ``A three-dimensional phase diagram of growth-induced
+  surface instabilities,'' {\em Scientific reports} {\bfseries 5} no.~1, (2015)
+  1--10.
+
+\bibitem{glasser2004water}
+L.~Glasser, ``Water, water, everywhere: Phase diagrams of ordinary water
+  substance,'' {\em Journal of chemical education} {\bfseries 81} no.~3, (2004)
+  414.
+
+\bibitem{bausch2021uncomputability}
+J.~Bausch, T.~S. Cubitt, and J.~D. Watson, ``Uncomputability of phase
+  diagrams,'' {\em Nature Communications} {\bfseries 12} no.~1, (2021) 1--8.
+
+\bibitem{Goldenfeld:1992qy}
+N.~Goldenfeld, {\em {Lectures on phase transitions and the renormalization
+  group}}.
+\newblock 1992.
+
+\bibitem{fisher1962theory}
+M.~E. Fisher, ``On the theory of critical point density fluctuations,'' {\em
+  Physica} {\bfseries 28} no.~2, (1962) 172--180.
+
+\bibitem{levy2012phase}
+J.~Levy, J.~Zinn-Justin, M.~Levy, and J.-C. Le~Guillou, {\em Phase Transitions
+  Carg{\`e}se 1980}, vol.~72.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem{oleaga2015three}
+A.~Oleaga, A.~Salazar, M.~C. Hatnean, and G.~Balakrishnan, ``Three-dimensional
+  ising critical behavior in r 0.6 s r 0.4 mn o 3 (r= pr, nd) manganites,''
+  {\em Physical Review B} {\bfseries 92} no.~2, (2015) 024409.
+
+\bibitem{Chester:2019ifh}
+S.~M. Chester, W.~Landry, J.~Liu, D.~Poland, D.~Simmons-Duffin, N.~Su, and
+  A.~Vichi, ``{Carving out OPE space and precise $O(2)$ model critical
+  exponents},'' \href{http://dx.doi.org/10.1007/JHEP06(2020)142}{{\em JHEP}
+  {\bfseries 06} (2020) 142}, \href{http://arxiv.org/abs/1912.03324}{{\ttfamily
+  arXiv:1912.03324 [hep-th]}}.
+
+\bibitem{Cardy:1996xt}
+J.~L. Cardy, {\em {Scaling and renormalization in statistical physics}}.
+\newblock 1996.
+
+\bibitem{Wilson:1971dc}
+K.~G. Wilson and M.~E. Fisher, ``{Critical exponents in 3.99 dimensions},''
+  \href{http://dx.doi.org/10.1103/PhysRevLett.28.240}{{\em Phys. Rev. Lett.}
+  {\bfseries 28} (1972) 240--243}.
+
+\bibitem{Simmons-Duffin:2016gjk}
+D.~Simmons-Duffin, \href{http://dx.doi.org/10.1142/9789813149441_0001}{``{The
+  Conformal Bootstrap},''} in {\em {Proceedings, Theoretical Advanced Study
+  Institute in Elementary Particle Physics: New Frontiers in Fields and Strings
+  (TASI 2015): Boulder, CO, USA, June 1-26, 2015}}, pp.~1--74.
+\newblock 2017.
+\newblock \href{http://arxiv.org/abs/1602.07982}{{\ttfamily arXiv:1602.07982
+  [hep-th]}}.
+\newblock
+\url{http://inspirehep.net/record/1424282/files/arXiv:1602.07982.pdf}.
+\newblock
+%%CITATION = ARXIV:1602.07982;%%.
+
+\bibitem{Kos:2014bka}
+F.~Kos, D.~Poland, and D.~Simmons-Duffin, ``{Bootstrapping Mixed Correlators in
+  the 3D Ising Model},'' \href{http://dx.doi.org/10.1007/JHEP11(2014)109}{{\em
+  JHEP} {\bfseries 11} (2014) 109},
+\href{http://arxiv.org/abs/1406.4858}{{\ttfamily arXiv:1406.4858 [hep-th]}}.
+%%CITATION = ARXIV:1406.4858;%%.
+
+\bibitem{istrail2000statistical}
+S.~Istrail, ``Statistical mechanics, three-dimensionality and np-completeness:
+  I. universality of intracatability for the partition function of the ising
+  model across non-planar surfaces,'' in {\em Proceedings of the thirty-second
+  annual ACM symposium on Theory of computing}, pp.~87--96.
+\newblock 2000.
+
+\bibitem{Moshe:2003xn}
+M.~Moshe and J.~Zinn-Justin, ``{Quantum field theory in the large N limit: A
+  Review},'' \href{http://dx.doi.org/10.1016/S0370-1573(03)00263-1}{{\em Phys.
+  Rept.} {\bfseries 385} (2003) 69--228},
+  \href{http://arxiv.org/abs/hep-th/0306133}{{\ttfamily arXiv:hep-th/0306133}}.
+
+\bibitem{Sokal:1991ui}
+A.~D. Sokal, A.~C.~D. van Enter, and R.~Fernandez, ``{Renormalization
+  transformations in the vicinity of first-order phase transitions: What can
+  and cannot go wrong},''
+  \href{http://dx.doi.org/10.1103/PhysRevLett.66.3253}{{\em Phys. Rev. Lett.}
+  {\bfseries 66} (1991) 3253--3256}.
+
+\bibitem{Nienhuis:1975zs}
+B.~Nienhuis and M.~Nauenberg, ``{First Order Phase Transitions in
+  Renormalization Group Theory},''
+  \href{http://dx.doi.org/10.1103/PhysRevLett.35.477}{{\em Phys. Rev. Lett.}
+  {\bfseries 35} (1975) 477--479}.
+
+\bibitem{barenblatt1996scaling}
+G.~I. Barenblatt, G.~I. Barenblatt, and B.~G. Isaakovich, {\em Scaling,
+  self-similarity, and intermediate asymptotics: dimensional analysis and
+  intermediate asymptotics}.
+\newblock No.~14. Cambridge University Press, 1996.
+
+\end{thebibliography}\endgroup

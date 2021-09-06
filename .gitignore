@@ -1,0 +1,10 @@
+*.aux
+*.DS_Store
+*.lof
+*.bib
+*.toc
+*.lot
+*.log
+*.synctex.gz
+*.out
+other/
