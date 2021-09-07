@@ -11,9 +11,9 @@
 \def\Exerciseheadfont{\bfseries}
 
 \makeatletter
-\newalphalph{\alphmult}[mult]{\@alph}{26}
+\newalphalph{\alphmult}[alph]{\@alph}{26}
 \makeatother
-\renewcommand{\thefootnote}{\arabic{footnote}}
+\renewcommand{\thefootnote}{\alphmult{\value{footnote}}}
 
 \numberwithin{equation}{section}
 
@@ -101,7 +101,7 @@ Let us start with something we observe in everyday life and have been taught in 
 	\caption[Phase diagram for fluids and uniaxial magnets]{\label{fig: phase diagram}\textbf{(a)} Phase diagram for fluids \textbf{(b)} Phase diagram for uniaxial magnets}
 \end{figure}
 
-The phase diagram of a system can be $n-$dimensional: the dimension of the diagram reflects the number of macroscopic parameters to tune with as we move between various phases. In the case of fluids, we have two parameters: \emph{pressure} $P$ and \emph{temperature} $T$. Similarly, if we consider the phase diagram of a uniaxial magnet, it also has two parameters to tune: temperature and \emph{external magnetic field} $h$.\footnote{A uniaxial magnet is a magnet whose magnetization can point in only one dimension.} Other systems may have phase diagrams of different dimensions; for instance, \cite{wang2015three} models biological structures as thermodynamic systems and classifies morphological patterns arising on the surface of  tissues as various phases; in its application, the resultant phase diagram has three parameters, see \figref{\ref{fig: phase diagram 2}}.
+The phase diagram of a system can be $n-$dimensional: the dimension of the diagram reflects the number of macroscopic parameters to tune with as we move between various phases. In the case of fluids, we have two parameters: \emph{pressure} $P$ and \emph{temperature} $T$. Similarly, if we consider the phase diagram of a uniaxial magnet, it also has two parameters to tune: temperature and \emph{external magnetic field} $h$.\footnote{A uniaxial magnet is a magnet whose magnetization can point in only one dimension, see \figref{\ref{fig:Ising model}}.} Other systems may have phase diagrams of different dimensions; for instance, \cite{wang2015three} models biological structures as thermodynamic systems and classifies morphological patterns arising on the surface of  tissues as various phases; in its application, the resultant phase diagram has three parameters, see \figref{\ref{fig: phase diagram 2}}.
 
 \begin{figure}
 	\centering 
@@ -114,6 +114,13 @@ The phase diagram of a system can be $n-$dimensional: the dimension of the diagr
 	\caption[Phase diagrams in three dimensions]{\label{fig: phase diagram 2} \textbf{(a)} A genuine three dimensional phase diagram example: various surface instability patterns induced on biological tissues \cite{wang2015three}. One needs to tune three parameter to sweep all phases. \textbf{(b)} Three dimensional depiction of the phase diagram of water and its various projections \cite{glasser2004water}: one can still reach all phases by tuning only two parameters.\footnotemark \textbf{(c)} An illustrative orthographic (isometric) three-dimensional pVT diagram of water \cite{glasser2004water}.}
 \end{figure}
 \footnotetext{See also \hyperref{http://biomodel.uah.es/Jmol/plots/phase-diagrams/inicio.htm}{}{}{http://biomodel.uah.es/Jmol/plots/phase-diagrams/inicio.htm}.}
+
+\begin{figure}
+\centering
+	\includegraphics[scale=.3]{Uniaxial_lattice}
+	\caption[Uniaxial magnet as a set of one-dimensional spins on a lattice]{\label{fig:Ising model} Uniaxial magnet as a set of one-dimensional spins on a lattice. If we examine this system at macroscopic scales, we do not observe individual spins but rather an average magnetization $M(x)$ which is a continuous field, hence we can describe it with a field theory. On microscopic scales, this theory is described by \emph{the Ising model}.}
+\end{figure}
+
 
 One can \naively think that we can always change the dimension of the phase diagram by considering other parameters; for instance, for fluids, we can also consider \emph{molar volume} $V$ as a parameter: the resultant graphical depiction of the phase diagram, along with its projection to various planes, can be seen in \figref{\ref{fig: phase diagram 2}}. It is true that such depictions can be quite useful, and one might conclude then that the phase diagram is in general of arbitrary dimension, as we can add more and more directions of arbitrary parameters. However, \emph{what we mean by the dimension of the phase diagram} is the number of parameters \emph{necessary} to tune to sweep all different phases. In the case of fluids, two parameters are sufficient to go over all phases, so we say that the phase diagram of fluids is two-dimensional, so is that of uniaxial magnets.
 
@@ -416,7 +423,7 @@ where $\cO_i(x)$ are \emph{operators} in the theory and $K_i$ are coupling const
 \be 
 Z[K_i]=\int_\Lambda \cD \f e^{-\int d^dx\cL[K_i(\Lambda),\f_\Lambda(x)]}
 \ee 
-Such theories are called \emph{effective field theories}, and we just argued that all quantum field theories are in a sense effective field theories!\footnote{
+Such theories are called \emph{effective field theories}, and we just argued that all quantum field theories are in a sense effective field theories!\footnote{\label{footnote: decoupling principle}
 A related concept here is \emph{the decoupling principle}. It basically states that if we have a very heavy particle in our model, its existence in low energies is only reflected through the modification of the coupling constants of lighter particles. In other words, in low energies, the heavy particles \emph{decouple} from the effective description of the phenomena (in the jargon, their propagators are said to be \emph{frozen}, or that they can be\emph{ integrated out}). As a corollary of the decoupling principle, we can never know certainly if there are heavier particles which have not been yet discovered by doing experiments at low energies; because if there are such particles, their contribution to the observables are indistinguishable from their absence with a different set of coupling constants of lighter particles.
 }
 
@@ -752,21 +759,127 @@ where $\De_\cO$ is called \emph{scaling dimension} of the operator $\cO$.
 
 \end{itemize}
 
-\begin{center}
-\bfseries\Huge 
-I have partially finished up until this point!
-\end{center}
-
-\clearpage
-
 \subsection{Using CFTs beyond statistical physics}
+
+In the previous sections, we have used the problems in statistical mechanics to motivate the usage of \emph{conformal field theories}; indeed, as we have seen there, it is essential to understand conformal field theories to describe and compute critical data for a huge collection of phenomena.\footnote{To be fair, what is essential is to understand \emph{scale invariant theories}, which as we have already stated are not necessarily conformally invariant. Nevertheless, this is almost always the case and we'll motivate this later.} What made the study of conformal field theories all the more powerful was the concept of universality: we can divide critical phenomena into a handful of different universality classes and understanding one CFT is sufficient to understand all the problems in the same universality class. The most prominenet example of this is the $3d$ Ising universality class; solving this CFT is sufficient to understand
+\begin{enumerate}
+	\item Liquid-vapor transitions, e.g. water at its critical point
+	\item Uniaxial magnetic systems, e.g. an idealized Nickel magnet
+	\item Binary mixtures, e.g. polymer solutions 
+	\item Coulombic systems, e.g. solvophobic electrolytes
+	\item Micellar systems, e.g. the process of aggregation of certain surfactant molecules in dilute aqueous solutions
+\end{enumerate}
+Please see the section 3.1.1 of \cite{Pelissetto:2000ek} for details on these cases alongside several resources. 
+
+Of course, there are several other universality classes and they can be used to explain yet other whole sets of phenomena in statistical mechanics, solid state physics, or chemistry; for instance
 \begin{itemize}
-	\item local and scale-invariant theories are usually CFTs
-	\item String theory and 2d CFTs
-	\item AdS/CFT correspondence
-	\item CFTs in cosmology
-	\item flat space holography
+	\item The three-dimensional XY universality class (describes the superfluid transition of $^4$He along the $\lambda-$line\footnote{See \figref{\ref{fig: lambda line}}.} among others)
+	\item The three-dimensional Heisenberg universality class (describes Curie transition in isotropic ferromagnets such as Ni and EuO, among others)
 \end{itemize}
+where further details can be found in the latter reference, i.e. $>100$ page review \cite{Pelissetto:2000ek}.
+
+For a practicality-minded reader, these should be more than enough as reasons to study conformal field theories. However, young researchers (especially in high energy physics) are often amazed by speculative theories or effective models in high energies, rather than low-energy phenomenological models with applications in \emph{trivial} branches, such as chemistry.\footnote{
+The tone in this sentence may be uncalled for, but as a young (?) researcher in high energy physics, I'd like to make this (self-)criticism: unfortunately, we can be too focused on high energy theories and a one-theory-to-rule-them-all model that would explain whole physics and that can be best understood only in high energies. Thus, we tend to feel that things at lower energies (and branches that explain them) are secondary to what we are studying; after all, we can (?) derive them from the high energy models. This is why (for someone who thinks that way) chemistry would be labeled trivial. Of course, I'm making these comments based on my own observations, which actually form a small subset of high energy physicists, making my generalization unwarranted.
+
+For a second, let's assume that my comment has some truth in it, i.e. some young high energy physicists do actually overemphasize the roll of high energy physics and do see some of the other branches rather trivial. Within this assumption, it is then a nonzero chance that you, the reader, may feel the same way. So I'd like to address this and hope that it is beneficial to you in case you were unaware of it.
+
+The point is that \emph{high energy physics can be used to explain all low energy phenomena} is an assumption, and is not really back-up. It is found on \emph{constructionism}, that one can construct macroscopic behavior from the knowledge of microscopic model, but constructionism is actually not valid: there are \emph{emergent phenomena}, concepts that only emerge at long distances and cannot be explained by short distance physics. Anderson famously discusses this in his seminal paper \emph{More Is Different} in 1972, and points to the difference between \emph{reductionism} and \emph{constructionism}: we can indeed reduce low energy rules to some fundamental laws in high energy physics, but we cannot start from the fundamental laws in high energy physics and construct low energy phenomena. I strongly urge the reader to check that article if they haven't already: see \cite{Anderson:1972pca}.
+} Therefore, I'd like to mention some other areas where conformal field theories are relevant.\footnote{The list is in no means complete.}
+\begin{itemize}
+	\item String theory, M-theory, or similar mathematically advanced models in general
+	\item Flate space holography
+	\item Quantum field theory
+	\item AdS/CFT
+	\item Cosmology
+\end{itemize}
+
+The first two items are really related to $2d$ CFTs: we know that string theory is a two dimensional conformal field theory on its worldsheet, and a scattering amplitute in four dimensional lorentzian spacetime can be related to a $2d$ Euclidean conformal field theory which lives at the null infinity of the Lorentzian space.\footnote{
+This is a relatively new field and the correspondence is not really that well-established, see \cite{Pasterski:2016qvg} which roughly initiated the current research on this area. For an earnest attempt at an introductory review, see section 2 of my paper \cite{Albayrak:2020saa}.
+} Our focus in these notes will be on higher dimensional $d\ge 3$ CFTs, so we can ignore these motivations.
+
+I wrote \emph{quantum field theory} as a motivation but it is rather ambiguous so let me unpack it. As we reviewed in \secref{\ref{sec: review of RG}}, any field theory can be subjected to RG flow, and its phase diagram shows the behavior of the model in general. Even if we are not interested in critical phenomena, the fixed points are still relevant because they are like landmarks on the space of all field theories; in fact, most theories flow from a CFT at UV to another CFT at IR, see \figref{\ref{fig: UV completion}}.\footnote{This statement is probably an exaggeration. First of all, the end-points of \emph{any} QFT has to be scale invariant, but some of them are simply trivial (i.e. the correlation length $\xi=0$) and are called \emph{topological} as there is no propagating degree of freedom left in them.\footnotemark The rest are interacting, i.e. $\xi=\infty$, but only some of them are also conformally-invariant (there are examples of fixed points with scale invariance but not conformal invariance). As I do not know what are the respective ratios of these cases, I actually only made an optimistic assumption by saying \emph{most theories} in the text.} \footnotetext{
+We should be very careful when we use the words trivial and topological at the same sentence! There can be many interesting non-trivial topologies, and that the theory is topological at the fixed point does not mean it doesn't have anything interesting in it. We just mean that we are not interested at those in these notes.} More importantly, as we do not know how to solve strongly coupled field theories in general, we may try to expand them around CFTs;\footnote{\draftnote{I need to put some source here}} likewise, we can explain more than critical phenomena if we are close to a CFT. For instance, there is this concept called \emph{walking}, which is relevant if the theory is not scale invariant but near a fixed point,\footnote{The coupling constants are called \emph{running} as they change with scale (such as fine structure constant of Quantum Electrodynamics), and are constant if the theory is scale invariant. If the theory is almost scale invariant, the coupling constants barely change hence are called \emph{walking}!} and walking behavior is related to many things including  the electroweak phenomenology beyond the Standard Model in high energy physics and the so-called weakly first-order phase transitions in statistical mechanics.\footnote{See \cite{Gorbenko:2018ncu,Gorbenko:2018dtm} as rather introductory reviews.} To understand such concepts, we need to understand conformal field theories in higher dimensions.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.35]{flow}
+\caption[End points of renormalization flow and conformal field theories]{\label{fig: UV completion}End points of renormalization flow and conformal field theories. All field theories flow from a fixed point at UV to another at IR, and fixed points are either described by a topological theory (i.e. $\xi=0$), a scale-invariant but not conformally invariant theory ($\xi=\infty$), or a conformally invariant field theory ($\xi=\infty$). Optimistically, we can assume that many cases of interest have CFTs at the end points of the RG flow.}
+\end{figure}
+
+Another motivation to study conformal field theories is the infamous conjecture that there is a duality between scattering amplitudes in curved spacetime and the conformal field theory at the boundary of that space.\footnote{
+More specifically, there is a correspondence between correlators in Anti de Sitter (AdS)\footnotemark in $d+1$ dimensions and the conformally invariant correlators at the boundary of that AdS \cite{Maldacena:1997re,Gubser:1998bc,Witten:1998qj}. This conjecture is often perceived as an outcome of string theory, but we can actually argue that we can arrive at this correspondence without using the string theory (at least intuitively). Penedones does a good job at pedagogically introducing this concept in \cite{Penedones:2016voo}; if you would like a more complete (yet also denser)  review, see \cite{Nastase:2007kj}.
+} \footnotetext{If you have not heard of de Sitter (dS) space before, it is basically a Lorentzian version of the standard sphere in $d$ dimensions (which is Euclidean); so in a sense, it is the most symmetric space in the Lorentzian signature. AdS is almost same as dS, their only difference is the sign of the \emph{curvature} of the space. In short, flat Lorentzian space, AdS and dS are three most symmetric spaces with curvature $=0$, $<0$, and $>0$ respectively; see \tabref{\ref{table: comparison of spaces of maximal symmetry}} for a comparison of these spaces.} As we do not have the UV completion of quantum gravity,\footnote{It is often stated that \emph{we do not have a theory for quantum gravity}. This is misleading; at low energies, we know how to quantize gravity (and obtain the quanta graviton) and compute scattering amplitudes of these objects among themselves or with standard model particles. The problem is that this theory is nonnormalizable, hence predicts its own regime of validity (roughly, upto Planck scales). Thus, we \emph{have} quantum gravity but we do not know its UV completion. If we remember from footnote~\ref{footnote: normalizable vs nonnormalizable}, the situation is similar to Fermi's model of weak interactions: he had a theory for weak interactions, but it was not \emph{UV-complete}, i.e. it had to break after going higher than some energy (some energy $\sim 300$ GeV in his case).} AdS/CFT correspondence is an attractive toy model to work with the quantization of gravity in a controlled environment; indeed, AdS is simple enough to do actual computations of correlation functions of gravitons.
+
+\begin{table}
+	\centering
+	\caption[Comparison of spaces with a maximal amount of symmetries]{\label{table: comparison of spaces of maximal symmetry}Comparison of spaces with a maximal amount of symmetries. The former two rows correspond to Euclidean spaces whereas the latter two do to Lorentzian spaces. It is known that not all curved spaces can be embedded in flat space; however, these spaces can actually be done so and the signature\footnotemark of the embedding space is given in the last column. See \cite{Nastase:2007kj} for a brief discussion of these points.}
+	\begin{tabular}{cccc}
+		\hline\hline 
+		\textbf{Name of the space}&\textbf{Signature}&\textbf{Curvature}&\textbf{Signature of the embedding space}
+		\\\hline
+		Sphere&$(d,0)$&Positive&$(d+1,0)$\\
+		Lobachevski&$(d,0)$&Negative&$(d,1)$\\
+		de Sitter&$(d-1,1)$&Positive&$(d,1)$\\
+		Anti de Sitter&$(d-1,1)$&Negative&$(d-1,2)$\\
+		\hline\hline 
+	\end{tabular}
+\end{table}
+\footnotetext{As an abbreviation, we write down signatures as $(p,q)$. This basically means that the metric of that space is given as $ds^2=\sum\limits_{i=1}^p dx_i^2-\sum\limits_{j=p+1}^{p+q}dx_j^2$.}
+
+Lastly, we can mention cosmology as a motivation to study conformal field theories. By cosmological principle\footnote{The principle that states the univers is isotropic and homogeneous at sufficiently large scales.}, we expect the universe to be governed by FLRW dynamics.\footnote{FLRW stands for the initials of the scientists Friedmann, Lemaître, Robertson, and Walker. Basically, this is the most symmetric universe which expands over time, an approximate model of our own universe.} Hence, it has the metric
+\be 
+ds^2=-dt^2+a(t)\eta_{ij}dx^idx^j
+\ee 
+where $a(t)$ is called the expansion parameter. Note that $\eta_{ij}$ here stands for the spatial metric which we are taking to be flat.\footnote{In general, $\eta_{ij}$ could be the metric of a maximally symmetric $d-1$ space.} We define the conformal time $\tau$ as
+\be 
+d\tau=\frac{dt}{a(t)}
+\ee 
+hence the metric can be written as 
+\be 
+\label{eq: FRW metric in conformal time}
+ds^2=a(\tau)^2\left(-d\tau^2+\eta_{ij}dx^idx^j\right)
+\ee
+We define the Hubble parameter $H(t)$ as 
+\be 
+H(t)=\frac{1}{a(t)}\frac{d a(t)}{dt}
+\ee  
+
+Let us now assume an inflationary cosmological model, which means that there was a time back in the early universe when there was a sustained period of accelerated expansion, i.e. \mbox{$\frac{d^2a(t)}{dt^2}>0$}. Let's assume that Hubble parameter had changed \emph{very slowly} and hence can be taken as a constant. This then implies
+\be 
+a(t)=e^{H(t-t_0)}
+\ee 
+which means $d\tau=e^{-H(t-t_0)}dt$, indicating that
+\be 
+\tau=-\frac{1}{Ha(\tau)}
+\ee 
+If we now insert this back to \equref{eq: FRW metric in conformal time}, we obtain
+\be
+\label{eq: dS metric}
+ds^2=\frac{-d\tau^2+\eta_{ij}dx^idx^j}{H^2\tau^2}
+ \ee 
+But this is precisely the metric for de Sitter space in the so-called Poincar\'e frame!\footnote{\draftnote{add references here}} Thus, \emph{if universe is homogeneous, isotropic, spatially almost flat, and had expanded during an inflationary period with an almost constant Hubble constant, then the spacetime of the universe during that period is approximately given as de Sitter space!}\footnote{See \cite{Baumann:2018muz} for a detailed review of cosmology and these arguments.}
+
+Well, how does this relate to conformal symmetries? As we review in \tabref{\ref{table: comparison of spaces of maximal symmetry}}, dS and AdS are almost same, and the boundary correlators of dS can also be explained by a CFT living there.\footnote{Unlike AdS, the CFT at the boundary of dS has to be a Euclidean CFT. One way to see this is to check the symmetries: the symmetry algebra of a conformal theory at a spacetime of signature $(p,q)$ is given as $so(p+1,q+1)$, and this should be the isometry of the space, which is roughly the last column in \tabref{\ref{table: comparison of spaces of maximal symmetry}}.} You can ask, then, why do we hear too much about AdS/CFT but not that much about dS/CFT? I'm no expert in this field but I guess we can name two sound reasons for that:
+\begin{itemize}
+	\item Just because the symmetries can be there does not mean they are not broken! For instance, conformal invariance is almost always broken in inflationary models\footnote{It is interesting to note that (contrary to conformal invariance) scale invariance remains an approximate symmetry in all inflationary models.} and only re-merges in slow-roll inflation\footnote{Inflation models where the \emph{potential energy} of the inflation dominates the \emph{kinetic energy}!} \cite{Baumann:2019ghk}, and even then, it is exact only in the limit where dynamic gravity decouples (so-called \emph{decoupling limit}). The interactions of slow-roll inflation beyond the decoupling limit are then controlled by the weakly broken conformal symmetry \cite{Arkani-Hamed:2015bza,Arkani-Hamed:2018kmz,Mata:2012bx}.
+	
+	\item Even if we had the symmetries intact, the relation between boundary CFT operators with the bulk fields\footnote{The combination ``bulk $x$'' refers to the quantity $x$ within the curved spacetime, whereas ``boundary x'' refers to the quantity $x$ at the boundary of the curved spacetime.} in AdS and dS are somewhat different. To understand this, let's rewrite \equref{eq: dS metric} again, but this time both for dS and AdS:
+	\be
+	ds^2=\frac{-d\tau^2+\eta^{\text{(dS)}}_{ij}dx_idx_j}{\tau^2}\quad\text{(dS)}\;,\qquad ds^2=\frac{dz^2+\eta^{\text{(AdS)}}_{ij}dx_idx_j}{z^2}\quad\text{(AdS)}
+	\ee 
+where $\eta^{\text{(dS)}}$ and $\eta^{\text{(AdS)}}$ are the boundary metrics respectively. We take $\eta^{\text{(dS)}}$ to be Euclidean for physical reasons (it is the metric for the spatial part of the universe), but we can take $\eta^{\text{(AdS)}}$ to be Lorentzian, meaning that a Lorentzian CFT lives at the boundary.
+				
+Now, we can see an intuitive difference between these two: In AdS, the CFT operators act as \emph{boundary conditions} on bulk fields; they determines bulk fields' values as $z\rightarrow 0$.\footnote{We get to the boundary as $z\rightarrow 0$.} On the other hand, the CFT operators act as \emph{final value conditions} on dS bulk fields; they determine bulk fields' value as $\tau\rightarrow 0$. We say \emph{final value condition} because, $-\infty<\tau<0$ and the CFT basically lives at the infinite future of the bulk fields. Thus it somehow makes sense to use CFT knowledge to fix the behavior of AdS fields to determine their time evaluation, but in dS, knowledge of CFT is already equivalent to the future knowledge of bulk fields, so it does not make a similar sense to use them.
+\end{itemize}
+
+Despite these reasons, CFT knowledge is essential in cosmology and the modern approach is to use it as much as possible to constraint ambiguities in the dS correlators. This approach is similar to \emph{conformal bootstrap program},\footnote{As we stated earlier, this program aims to classify and constraint conformal symmetries by non-perturbative tools such as analyticity or unitarity.} and is in fact named \emph{cosmological bootstrap program}, see \cite{Baumann:2019oyu,Baumann:2020ksv,Baumann:2020dch}.\footnote{I have been citing a lot of Daniel Baumann's papers in the last few pages. This is not just necessarily because of his papers' excellence (although they are really good): I really do not command the literature that well and am biased towards Baumann's work as I am working in his group.}
+
+
+\begin{center}
+	\bfseries\Huge 
+	I have partially finished up until this point!
+\end{center}
+\clearpage
 
 \section{What is conformal symmetry?}
 \subsection{Invitation: understanding Gallileon transformations in a mathematical framework}

@@ -3,52 +3,60 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: notes.aux
 The style file: utphys.bst
 Database file #1: collectiveReferenceLibrary.bib
-Repeated entry---line 274355 of file collectiveReferenceLibrary.bib
+Repeated entry---line 35786 of file collectiveReferenceLibrary.bib
+ : @article{Arkani-Hamed:2015bza
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 210661 of file collectiveReferenceLibrary.bib
+ : @inproceedings{Penedones:2016voo
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 274389 of file collectiveReferenceLibrary.bib
  : @inproceedings{Simmons-Duffin:2016gjk
  :                                      ,
 I'm skipping whatever remains of this entry
 Warning--empty publisher in Goldenfeld:1992qy
 Warning--empty publisher in Cardy:1996xt
 Warning--there's a number but no series in barenblatt1996scaling
-You've used 17 entries,
+You've used 36 entries,
             2328 wiz_defined-function locations,
-            690 strings with 7329 characters,
-and the built_in function-call counts, 5164 in all, are:
-= -- 527
-> -- 151
+            844 strings with 10686 characters,
+and the built_in function-call counts, 10705 in all, are:
+= -- 1074
+> -- 327
 < -- 0
-+ -- 58
-- -- 41
-* -- 408
-:= -- 625
-add.period$ -- 28
-call.type$ -- 17
-change.case$ -- 13
++ -- 125
+- -- 89
+* -- 999
+:= -- 1292
+add.period$ -- 57
+call.type$ -- 36
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 294
-empty$ -- 557
-format.name$ -- 41
-if$ -- 1343
+cite$ -- 39
+duplicate$ -- 584
+empty$ -- 1116
+format.name$ -- 89
+if$ -- 2769
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 54
-newline$ -- 67
-num.names$ -- 17
-pop$ -- 119
+int.to.str$ -- 36
+missing$ -- 122
+newline$ -- 141
+num.names$ -- 36
+pop$ -- 209
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 173
+skip$ -- 353
 stack$ -- 0
-substring$ -- 267
-swap$ -- 112
+substring$ -- 506
+swap$ -- 240
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 47
-width$ -- 19
-write$ -- 145
-(There was 1 error message)
+while$ -- 89
+width$ -- 38
+write$ -- 303
+(There were 3 error messages)

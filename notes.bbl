@@ -101,4 +101,134 @@ G.~I. Barenblatt, G.~I. Barenblatt, and B.~G. Isaakovich, {\em Scaling,
   intermediate asymptotics}.
 \newblock No.~14. Cambridge University Press, 1996.
 
+\bibitem{Pelissetto:2000ek}
+A.~Pelissetto and E.~Vicari, ``{Critical phenomena and renormalization group
+  theory},'' \href{http://dx.doi.org/10.1016/S0370-1573(02)00219-3}{{\em Phys.
+  Rept.} {\bfseries 368} (2002) 549--727},
+  \href{http://arxiv.org/abs/cond-mat/0012164}{{\ttfamily
+  arXiv:cond-mat/0012164}}.
+
+\bibitem{Anderson:1972pca}
+P.~W. Anderson, ``{More Is Different},''
+\href{http://dx.doi.org/10.1126/science.177.4047.393}{{\em Science} {\bfseries
+  177} no.~4047, (1972) 393--396}.
+%%CITATION = SCIEA,177,393;%%.
+
+\bibitem{Pasterski:2016qvg}
+S.~Pasterski, S.-H. Shao, and A.~Strominger, ``{Flat Space Amplitudes and
+  Conformal Symmetry of the Celestial Sphere},''
+  \href{http://dx.doi.org/10.1103/PhysRevD.96.065026}{{\em Phys. Rev. D}
+  {\bfseries 96} no.~6, (2017) 065026},
+  \href{http://arxiv.org/abs/1701.00049}{{\ttfamily arXiv:1701.00049
+  [hep-th]}}.
+
+\bibitem{Albayrak:2020saa}
+S.~Albayrak, C.~Chowdhury, and S.~Kharel, ``{On loop celestial amplitudes for
+  gauge theory and gravity},''
+  \href{http://arxiv.org/abs/2007.09338}{{\ttfamily arXiv:2007.09338
+  [hep-th]}}.
+
+\bibitem{Gorbenko:2018ncu}
+V.~Gorbenko, S.~Rychkov, and B.~Zan, ``{Walking, Weak first-order transitions,
+  and Complex CFTs},'' \href{http://dx.doi.org/10.1007/JHEP10(2018)108}{{\em
+  JHEP} {\bfseries 10} (2018) 108},
+\href{http://arxiv.org/abs/1807.11512}{{\ttfamily arXiv:1807.11512 [hep-th]}}.
+%%CITATION = ARXIV:1807.11512;%%.
+
+\bibitem{Gorbenko:2018dtm}
+V.~Gorbenko, S.~Rychkov, and B.~Zan, ``{Walking, Weak first-order transitions,
+  and Complex CFTs II. Two-dimensional Potts model at $Q>4$},''
+  \href{http://dx.doi.org/10.21468/SciPostPhys.5.5.050}{{\em SciPost Phys.}
+  {\bfseries 5} no.~5, (2018) 050},
+\href{http://arxiv.org/abs/1808.04380}{{\ttfamily arXiv:1808.04380 [hep-th]}}.
+%%CITATION = ARXIV:1808.04380;%%.
+
+\bibitem{Maldacena:1997re}
+J.~M. Maldacena, ``{The Large N limit of superconformal field theories and
+  supergravity},'' \href{http://dx.doi.org/10.1023/A:1026654312961,
+  10.4310/ATMP.1998.v2.n2.a1}{{\em Int. J. Theor. Phys.} {\bfseries 38} (1999)
+  1113--1133}, \href{http://arxiv.org/abs/hep-th/9711200}{{\ttfamily
+  arXiv:hep-th/9711200 [hep-th]}}.
+[Adv. Theor. Math. Phys.2,231(1998)].
+%%CITATION = HEP-TH/9711200;%%.
+
+\bibitem{Gubser:1998bc}
+S.~S. Gubser, I.~R. Klebanov, and A.~M. Polyakov, ``{Gauge theory correlators
+  from noncritical string theory},''
+  \href{http://dx.doi.org/10.1016/S0370-2693(98)00377-3}{{\em Phys. Lett.}
+  {\bfseries B428} (1998) 105--114},
+\href{http://arxiv.org/abs/hep-th/9802109}{{\ttfamily arXiv:hep-th/9802109
+  [hep-th]}}.
+%%CITATION = HEP-TH/9802109;%%.
+
+\bibitem{Witten:1998qj}
+E.~Witten, ``{Anti-de Sitter space and holography},''
+  \href{http://dx.doi.org/10.4310/ATMP.1998.v2.n2.a2}{{\em Adv. Theor. Math.
+  Phys.} {\bfseries 2} (1998) 253--291},
+\href{http://arxiv.org/abs/hep-th/9802150}{{\ttfamily arXiv:hep-th/9802150
+  [hep-th]}}.
+%%CITATION = HEP-TH/9802150;%%.
+
+\bibitem{Penedones:2016voo}
+J.~Penedones, \href{http://dx.doi.org/10.1142/9789813149441_0002}{``{TASI
+  lectures on AdS/CFT},''} in {\em {Proceedings, Theoretical Advanced Study
+  Institute in Elementary Particle Physics: New Frontiers in Fields and Strings
+  (TASI 2015): Boulder, CO, USA, June 1-26, 2015}}, pp.~75--136.
+\newblock 2017.
+\newblock
+\href{http://arxiv.org/abs/1608.04948}{{\ttfamily arXiv:1608.04948 [hep-th]}}.
+\newblock
+%%CITATION = ARXIV:1608.04948;%%.
+
+\bibitem{Nastase:2007kj}
+H.~Nastase, ``{Introduction to AdS-CFT},''
+  \href{http://arxiv.org/abs/0712.0689}{{\ttfamily arXiv:0712.0689 [hep-th]}}.
+
+\bibitem{Baumann:2018muz}
+D.~Baumann, ``{Primordial Cosmology},''
+  \href{http://dx.doi.org/10.22323/1.305.0009}{{\em PoS} {\bfseries TASI2017}
+  (2018) 009}, \href{http://arxiv.org/abs/1807.03098}{{\ttfamily
+  arXiv:1807.03098 [hep-th]}}.
+
+\bibitem{Baumann:2019ghk}
+D.~Baumann, D.~Green, and T.~Hartman, ``{Dynamical Constraints on RG Flows and
+  Cosmology},'' \href{http://dx.doi.org/10.1007/JHEP12(2019)134}{{\em JHEP}
+  {\bfseries 12} (2019) 134}, \href{http://arxiv.org/abs/1906.10226}{{\ttfamily
+  arXiv:1906.10226 [hep-th]}}.
+
+\bibitem{Arkani-Hamed:2015bza}
+N.~Arkani-Hamed and J.~Maldacena, ``{Cosmological Collider Physics},''
+  \href{http://arxiv.org/abs/1503.08043}{{\ttfamily arXiv:1503.08043
+  [hep-th]}}.
+
+\bibitem{Arkani-Hamed:2018kmz}
+N.~Arkani-Hamed, D.~Baumann, H.~Lee, and G.~L. Pimentel, ``{The Cosmological
+  Bootstrap: Inflationary Correlators from Symmetries and Singularities},''
+  \href{http://dx.doi.org/10.1007/JHEP04(2020)105}{{\em JHEP} {\bfseries 04}
+  (2020) 105}, \href{http://arxiv.org/abs/1811.00024}{{\ttfamily
+  arXiv:1811.00024 [hep-th]}}.
+
+\bibitem{Mata:2012bx}
+I.~Mata, S.~Raju, and S.~Trivedi, ``{CMB from CFT},''
+  \href{http://dx.doi.org/10.1007/JHEP07(2013)015}{{\em JHEP} {\bfseries 07}
+  (2013) 015}, \href{http://arxiv.org/abs/1211.5482}{{\ttfamily arXiv:1211.5482
+  [hep-th]}}.
+
+\bibitem{Baumann:2019oyu}
+D.~Baumann, C.~Duaso~Pueyo, A.~Joyce, H.~Lee, and G.~L. Pimentel, ``{The
+  Cosmological Bootstrap: Weight-Shifting Operators and Scalar Seeds},''
+  \href{http://arxiv.org/abs/1910.14051}{{\ttfamily arXiv:1910.14051
+  [hep-th]}}.
+
+\bibitem{Baumann:2020ksv}
+D.~Baumann, C.~Duaso~Pueyo, and A.~Joyce, ``{Bootstrapping Cosmological
+  Correlations},'' \href{http://dx.doi.org/10.22661/AAPPSBL.2020.30.6.02}{{\em
+  AAPPS Bull.} {\bfseries 30} no.~6, (2020) 2--9}.
+
+\bibitem{Baumann:2020dch}
+D.~Baumann, C.~Duaso~Pueyo, A.~Joyce, H.~Lee, and G.~L. Pimentel, ``{The
+  Cosmological Bootstrap: Spinning Correlators from Symmetries and
+  Factorization},'' \href{http://arxiv.org/abs/2005.04234}{{\ttfamily
+  arXiv:2005.04234 [hep-th]}}.
+
 \end{thebibliography}\endgroup
