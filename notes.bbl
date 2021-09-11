@@ -143,6 +143,60 @@ V.~Gorbenko, S.~Rychkov, and B.~Zan, ``{Walking, Weak first-order transitions,
 \href{http://arxiv.org/abs/1808.04380}{{\ttfamily arXiv:1808.04380 [hep-th]}}.
 %%CITATION = ARXIV:1808.04380;%%.
 
+\bibitem{Caswell:1974gg}
+W.~E. Caswell, ``{Asymptotic Behavior of Nonabelian Gauge Theories to Two Loop
+  Order},'' \href{http://dx.doi.org/10.1103/PhysRevLett.33.244}{{\em Phys. Rev.
+  Lett.} {\bfseries 33} (1974) 244}.
+
+\bibitem{Banks:1981nn}
+T.~Banks and A.~Zaks, ``{On the Phase Structure of Vector-Like Gauge Theories
+  with Massless Fermions},''
+  \href{http://dx.doi.org/10.1016/0550-3213(82)90035-9}{{\em Nucl. Phys. B}
+  {\bfseries 196} (1982) 189--204}.
+
+\bibitem{DeGrand:2015zxa}
+T.~DeGrand, ``{Lattice tests of beyond Standard Model dynamics},''
+  \href{http://dx.doi.org/10.1103/RevModPhys.88.015001}{{\em Rev. Mod. Phys.}
+  {\bfseries 88} (2016) 015001},
+  \href{http://arxiv.org/abs/1510.05018}{{\ttfamily arXiv:1510.05018
+  [hep-ph]}}.
+
+\bibitem{Gukov:2016tnp}
+S.~Gukov, ``{RG Flows and Bifurcations},''
+  \href{http://dx.doi.org/10.1016/j.nuclphysb.2017.03.025}{{\em Nucl. Phys. B}
+  {\bfseries 919} (2017) 583--638},
+  \href{http://arxiv.org/abs/1608.06638}{{\ttfamily arXiv:1608.06638
+  [hep-th]}}.
+
+\bibitem{Karateev:2019pvw}
+D.~Karateev, P.~Kravchuk, M.~Serone, and A.~Vichi, ``{Fermion Conformal
+  Bootstrap in 4d},''
+\href{http://arxiv.org/abs/1902.05969}{{\ttfamily arXiv:1902.05969 [hep-th]}}.
+%%CITATION = ARXIV:1902.05969;%%.
+
+\bibitem{Aoki:2011cmy}
+{\bfseries LatKMI} Collaboration, Y.~Aoki, T.~Aoyama, M.~Kurachi, T.~Maskawa,
+  K.-i. Nagai, H.~Ohki, A.~Shibata, K.~Yamawaki, and T.~Yamazaki, ``{Many
+  flavor QCD with $N_f$=12 and 16},''
+  \href{http://dx.doi.org/10.22323/1.139.0053}{{\em PoS} {\bfseries
+  LATTICE2011} (2011) 053}, \href{http://arxiv.org/abs/1202.4916}{{\ttfamily
+  arXiv:1202.4916 [hep-lat]}}.
+
+\bibitem{Lee:2020ihn}
+J.-W. Lee, ``{Conformal window from conformal expansion},''
+  \href{http://dx.doi.org/10.1103/PhysRevD.103.076006}{{\em Phys. Rev. D}
+  {\bfseries 103} no.~7, (2021) 076006},
+  \href{http://arxiv.org/abs/2008.12223}{{\ttfamily arXiv:2008.12223
+  [hep-ph]}}.
+
+\bibitem{Nayak:2020bjz}
+T.~K. Nayak, ``{Probing the QCD phase structure using event-by-event
+  fluctuations},''
+  \href{http://dx.doi.org/10.1088/1742-6596/1602/1/012003}{{\em J. Phys. Conf.
+  Ser.} {\bfseries 1602} no.~1, (2020) 012003},
+  \href{http://arxiv.org/abs/2008.04643}{{\ttfamily arXiv:2008.04643
+  [nucl-ex]}}.
+
 \bibitem{Maldacena:1997re}
 J.~M. Maldacena, ``{The Large N limit of superconformal field theories and
   supergravity},'' \href{http://dx.doi.org/10.1023/A:1026654312961,
@@ -183,6 +237,22 @@ J.~Penedones, \href{http://dx.doi.org/10.1142/9789813149441_0002}{``{TASI
 \bibitem{Nastase:2007kj}
 H.~Nastase, ``{Introduction to AdS-CFT},''
   \href{http://arxiv.org/abs/0712.0689}{{\ttfamily arXiv:0712.0689 [hep-th]}}.
+
+\bibitem{Hunt:2008wp}
+P.~Hunt and S.~Sarkar, ``{Constraints on large scale inhomogeneities from
+  WMAP-5 and SDSS: confrontation with recent observations},''
+  \href{http://dx.doi.org/10.1111/j.1365-2966.2009.15670.x}{{\em Mon. Not. Roy.
+  Astron. Soc.} {\bfseries 401} (2010) 547},
+  \href{http://arxiv.org/abs/0807.4508}{{\ttfamily arXiv:0807.4508
+  [astro-ph]}}.
+
+\bibitem{Colin:2019opb}
+J.~Colin, R.~Mohayaee, M.~Rameez, and S.~Sarkar, ``{Evidence for anisotropy of
+  cosmic acceleration},''
+  \href{http://dx.doi.org/10.1051/0004-6361/201936373}{{\em Astron. Astrophys.}
+  {\bfseries 631} (2019) L13},
+  \href{http://arxiv.org/abs/1808.04597}{{\ttfamily arXiv:1808.04597
+  [astro-ph.CO]}}.
 
 \bibitem{Baumann:2018muz}
 D.~Baumann, ``{Primordial Cosmology},''
