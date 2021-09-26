@@ -42,7 +42,7 @@
 	\vspace{.2in}
 
 %	\begin{abstract}
-		These are the notes of the lectures prepared for the ``Advanced Topics in Theoretical Physics''  summer school at \emph{Feza Gürsey Merkezi}, September 2021. These notes are mostly based on other discussions and I provided the sources  in relevant places. I may update the notes even after the summer school to keep it up-to-date and self-contained; there are also reminders \draftnote{in blue} for me to add further discussion/comments.
+		These are the notes of the lectures prepared for the ``Advanced Topics in Theoretical Physics''  summer school at \emph{Feza Gürsey Merkezi}, September 2021. These notes are mostly based on other discussions and I provided the sources  in relevant places. I will keep updating the notes after the summer school to keep it up-to-date and self-contained; there are also reminders \draftnote{in blue} for me to add further discussion/comments.
 		\par This document was last updated on \today.
 %	\end{abstract}
 	
@@ -940,8 +940,8 @@ The proportionality constants depend on our conventions and we can of course alw
 
 In this simple example, we see that assuming a symmetry brings actually a constraint to our equations: kinetic energy needs to be quadratic in velocity, which is true for any system with Galilean invariance! In the rest of the notes, we'll try to do a similar thing with conformal invariance: it will also bring various kinematic constraints which will in turn simplify the computation of numerous quantities in field theories! 
 
-\subsection{Review: Galilean and Poincar\'e algebras}
-As we have seen in the previous section, imposing invariance under a symmetry helps us constraint the physical formulae. However, to fully understand how symmetry is embedded in mathematical equations, we need to understand the concept of group and algebra, which we will briefly review here.
+\subsection{Galilean  symmetry and scale-invariance}
+As we have seen in the previous section, imposing invariance under a symmetry helps us constraint the physical formulae. However, to fully understand how a symmetry is embedded in mathematical equations, we need to understand the concept of group and algebra, which we will briefly review here.
 
 \subsubsection{Primer: groups, fields, and algebras}
 \label{sec: review of groups, fields, and algebras}
@@ -958,7 +958,7 @@ Before we start, we may want to set the conventions and review the basics of gro
 	\item there is a mapping $g\to \hat g$ of G onto G such that $g*\hat g=\hat g*g=e$
 	\item operator $*$ is associative: $g_1*(g_2*g_3)=(g_1*g_2)*g_3$
 \end{enumerate}
-where $e$ is usually called identity and $\hat g$ is usually called the inverse element, denoted as $g^{-1}$, and $a*b$ is denoted as $a b$. If $*$ is commutative, $a*b=b*a$ is usually denoted as $a+b=b+a$, and $\hat g$ denoted as $-g$. In this case $e$ is denoted as $0$.
+where $e$ is usually called identity and $\hat g$ is usually called the inverse element, denoted as $g^{-1}$, and $a*b$ is denoted as $a b$. If $*$ is commutative, $a*b=b*a$ is usually denoted as $a+b=b+a$, and $\hat g$ denoted as $-g$. In this case $e$ is denoted as $0$. In this section, for brevity, we will use the terminology such that any commuting operation will be called \emph{addition} and any  not-necessarily-commuting operation will be called \emph{multiplication}, i.e. $a+b=b+a$ and $ab\stackrel{?}{=}ba$.
 
 $\abs{G}$ is the order of the group and is equal to the number of elements of $G$. One of the most important groups is the symmetric group  $S_n$, which is the set of all permutations of $n$ elements. In fact, in general, the collection of all transformations of a set $X$ (one to one mappings of $X$ onto itself) is a group.
 
@@ -966,7 +966,7 @@ Some common examples of groups include
 \begin{itemize}
 	\item $\C$ under addition, $\C\backslash\{0\}$ under multiplication
 	\item The additive group of the ring $\Z$ (the set of integers) is called the infinite cyclic group.
-	\item The additive group of the ring $\Z_n=\{0,1,\dots,n-1\}$ is the cyclic group of order $n$.
+	\item The (mod$-n$) additive group of the ring $\Z_n=\{0,1,\dots,n-1\}$ is the cyclic group of order $n$.
 \end{itemize}
 
 \paragraph{Ring (Commutative Group with multiplication):} Any commutative group with additional multiplication operation is called a ring; more precisely, the group $R$ is a ring if
@@ -1018,7 +1018,7 @@ In order to define a multiplication in a linear algebra $\cL$ of finite dimensio
 	\ee 
 Here, $c^k_{ij}$ are called \emph{structure constants} of the algebra $\cL$.
 
-The most common example for a linear algebra would be the space $\mathfrak(n,\ka)$ of all $n\x n$ matrices over the field $\ka$, which forms an associative and non-commutative lie algebra.\footnote{
+The most common example for a linear algebra would be the space $\mathfrak(n,\ka)$ of all $n\x n$ matrices over the field $\ka$, which forms an associative and non-commutative linear algebra.\footnote{
 In this algebra, the element-wise multiplication is simply the matrix multiplication, hence identity element is the identity matrix . As we can choose the basis $e_{ij}=\delta_{ij}$, the element multiplication reads $e_{ij}e_{km}=\delta_{jk}e_{im}$, which yields the structure constants $c^{rs}_{ij,km}=\delta_{ir}\delta_{jk}\delta_{ms}$.
 }
 	
@@ -1035,129 +1035,273 @@ The structure constants of a Lie algebra satisfy the identities
 	\ee 
 	Conversely, any algebra whose structure constants satisfy these conditions is a Lie algebra.
 	
-In general, we can obtain a \emph{Lie algebra} from any algebra $\cL$ over a field $\ka$ by choosing $[X,Y]=XY-YX$, if multiplication of $\cL$ is associative. With this construction, $\mathcal{i}$ has same elements with $\cL$.\footnote{A concrete example of this procedure is given by the set of all $n\times n$ matrices over the field $\ka$, i.e. $\mathfrak{M}(n,\ka)$, which is a Lie algebra over $\ka$. The commutation relations for its basis matrices $e_{ij}$ and the structure constants are given as
+In general, we can obtain a \emph{Lie algebra} from any algebra $\cL$ over a field $\ka$ by choosing $[X,Y]=XY-YX$, if multiplication of $\cL$ is associative. With this construction, $\mathcal{I}$ has same elements with $\cL$.\footnote{A concrete example of this procedure is given by the set of all $n\times n$ matrices over the field $\ka$, i.e. $\mathfrak{M}(n,\ka)$, which is a Lie algebra over $\ka$. The commutation relations for its basis matrices $e_{ij}$ and the structure constants are given as
 \be 
 [e_{ij},e_{km}]=\delta_{jk}e_{im}-\delta_{mi}e_{kj}\;,\quad c^{rs}_{ij,km}=\delta_{ir}\delta_{jk}\delta_{ms}-\delta_{kr}\delta_{im}\delta_{js}
 \ee 
-} A simpler example is the set of vectors in a three-dimensional space is a Lie algebra under vector multiplication.
+} For instance, the set of vectors in a three-dimensional space is a Lie algebra under vector multiplication.
 
-\begin{center}
-	\bfseries\Huge 
-	I have partially finished up until this point!
-\end{center}
+\paragraph{Exponential map (from algebra back to the group):} We have started with groups first and constructed lie algebras from them step by step, which is summarized in \figref{\ref{fig: group-field-algebra}}. We can close the loop now and get back to the groups from algebras via so-called \emph{exponential map}!
 
-\subsection{Galilean and Poincare algebras}
-In the previous subsection, we have given bunch of technical details regarding the definitions of mathematical concepts algebras, groups, etc. Such definitions and technicalities will be barely needed, so please regard that as for the sake of completeness.
+We will not dwell on technical details or subtleties; instead, let's simply state blankly that the group space\footnote{The abstract space filled with the elements of the group.} can be a differentiable manifold for some groups and such groups are called Lie groups. For instance, the translations in two dimensions have group elements $g\in\R^2$, e.g. $(1,3)+(2,-5)=(3,-2)$. Thus, the group space is $\R^2$, a differentiable manifold, and hence the translations form a Lie group.
 
-Having dealt with the issue of self-containedness of the notes, let's get back to track and analyze Conformal group. We'll do that by building up our algebras from the simples translation algebra and see how they combine along the way.
+The group manifold for the Lie groups can be rather complicated; however, if we sufficiently zoom around the identity element of the group, the group space should become flat (i.e. Euclidean space) and we should be able to construct a linear algebra. In fact, we can go ahead and construct a Lie algebra (whose identity element matches identity element of the group). By exponentiating the action of the Lie algebra, we can zoom out of the infinitesimal neighborhood around the identity: the exponentiation of the action of the Lie algebra generates the action of the Lie group, \emph{at least part of it which can be obtained continuously from the identity element}.
 
-The translation algebra in $d$ dimension is denoted as $t(d)$ and has $d$ generators denoted as $p_i$, all commuting with each other:
-\be
-\label{eq: translation algebra}
-[p_i,p_j] =0
-\ee 
-basically meaning that we have an Abelian algebra of $d$ elements. By exponentiation, this algebra generates the translation group $T(d)$:\footnote{Note that we are using Einstein's summation convention in these notes, i.e. $a_k p_k$ stands for $\sum_ka_k p_k$}
+This explanation is rather abstract, so let's illustrate it with the simplest case: translations in $d-$dimensions. Clearly, the group space is $\R^d$ and the elements of the group are usual $d-$dimensional vectors, i.e. $\vec{a}\in\R^d$. The action of the group \emph{on the group space} is trivial, i.e.
 \be 
-e^{a_k p_k}f(\bx)=f(\bx+\mathbf{a})
+a^i:x^i\rightarrow x^i+a^i
 \ee 
-Let's try to find the differential representation of the generator $p_i$. Well, we can easily see this by Taylor expanding the equation above, i.e.
+which is inhomogeneous but can be upgraded to a homogeneous transformation\footnote{In this context, we state that the transformation $x\rightarrow M.x$ is homogeneous whereas $x\rightarrow M.x+a$ is inhomogeneous.} as
 \be 
-\left(1+a_kp_k+\frac{(a_kp_k)^2}{2}+\dots\right)f(x)=f(x)+a_k\partial_kf(x)+\frac{a_k a_l}{2}\partial_k\partial_lf(x)+\dots
+\begin{pmatrix}
+a^1\\a^2\\\vdots\\a^d
+\end{pmatrix}:
+\begin{pmatrix}
+x^1\\x^2\\\vdots\\x^d\\1
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+1&0&\dots &0&a^1\\
+0&1&\dots &0&a^2\\
+&&\ddots\\
+0&0&\dots&1&a^d\\
+0&0&\dots &0&1
+\end{pmatrix}
+\begin{pmatrix}
+	x^1\\x^2\\\vdots\\x^d\\1
+\end{pmatrix}
 \ee 
-Clearly, we can simply choose $p_k=\partial_k$, which satisfies the necessary algebra condition in \equref{eq: translation algebra}. However, we will derive this with a somehow complicated method, because the approach will generalize to other groups as well.
-
-Let's consider the \emph{Fourier representation} of $f(x)$, i.e.
+which is actually a special case of \emph{Affine group}.\footnote{We do not need to know anything about these in these notes.\draftnote{Maybe I should mention physical uses of affine group}} If we instead focus on the action of the group on \emph{scalar functions defined on $\R^d$}, then we have
 \be 
-f(x)=\int\limits_{-\infty}^\infty\frac{d^dq}{(2\pi)^d}e^{iq\.x}\tilde f(q)
+a^i: f(x^i)\rightarrow f(x^i+a^i)
 \ee 
-If we now consider the translation $x\rightarrow x+a$, we see that the function $\tl f(k)$ simply picks up a phase: $\tl f(k)\rightarrow e^{iq\.a}\tl f(k)$! This is extremely important, because this indicates that this representation \emph{diagonalizes} the action of translation, i.e. $\tl f(k)$ and $\tl f(k')$ do not mix!
-
-We can now simply go ahead and trivially see that
+If we denote by $T(a^i)$ the group action of the translation, then we have
 \be 
-f(x+a)=&\int\limits_{-\infty}^\infty\frac{d^dq}{(2\pi)^d}e^{iq\.(x+a)}\tilde f(q)=\int\limits_{-\infty}^\infty\frac{d^dq}{(2\pi)^d}e^{iq\.a}e^{iq\.x}\tilde f(q)=\int\limits_{-\infty}^\infty\frac{d^dq}{(2\pi)^d}e^{a\.\partial}e^{iq\.x}\tilde f(q)
-\\&=e^{a\.\partial}\int\limits_{-\infty}^\infty\frac{d^dq}{(2\pi)^d}e^{iq\.x}\tilde f(q)=e^{q\.\partial}f(x)
+T(a^i)f(x^i)=f(x^i+a^i)
 \ee 
-
-Let's now move on to our next algebra, the rotation algebra $\mathrm{so}(d)$. This algebra is generated by the antisymmetric elements $m_{ab}=-m_{ba}$ with the commutation relations
+To find $T$, we Taylor-expand for small $a^i$,\footnote{This is no coincidence: $a^i=0$ \emph{is} the identity element of the translation group, which is why we are expanding around it!} which reads
 \be 
-\label{eq: rotation algebra}
-\comm{m_{ab}}{m_{cd}}=\eta_{ad}m_{bc}+\eta_{bc}m_{da}+\eta_{ac}m_{db}+\eta_{bd}m_{ac}
+T(0)f(x^i)+a^j\frac{\partial T(a_k)}{\partial a_j}\evaluated_{a_k=0}f(x^i)+\cdots=f(x^i)+a^j\partial_jf(x^i)+\cdots 
 \ee 
-We will now try to find the differential representation of $m_{ab}$. For simplicity, let's stick to $d=3$ and work out the explicit form of $m_{ab}$ for $\mathrm{so}(3)$. To do this, we'll consider the spherical coordinates and the \emph{spherical harmonic expansion} of an arbitrary function on $\R^3$:
+Thus, the solution reads
 \be 
-f(r,\theta,\phi)=\sum\limits_{l=0}^\infty \sum\limits_{m=-l}^l\left[r^lP_l^m(\cos\theta)e^{im\f}\right]\tilde{f}(l,m)
+T(a_i)=\exp(a_j\partial_j)
 \ee 
-where $P_l^m$ is the associated Legendre polynomial, which will not be important for our discussion.
-
-We choose our coordinate system such that we are rotating along $\f$ direction, i.e. $\f\rightarrow\f+a$. We then have:
+which can be straightforwardly checked. Thus, the partial derivative \emph{generates} the translation and its exponentiation gives the group element of translations. We then immediately see that 
 \be 
-f(r,\theta,\phi+a)=&f(r,\theta,\phi)=\sum\limits_{l=0}^\infty \sum\limits_{m=-l}^l\left[r^lP_l^m(\cos\theta)e^{im(\f+a)}\right]\tilde{f}(l,m)
-\\=&f(r,\theta,\phi)=\sum\limits_{l=0}^\infty \sum\limits_{m=-l}^le^{a\partial_\f}\left[r^lP_l^m(\cos\theta)e^{im\f}\right]\tilde{f}(l,m)
-\\=&e^{a\partial_\f}f(r,\theta,\phi)
+[\partial_i,\partial_j]=0
 \ee 
-This is exactly the same simplification as the Fourier transform in the case of translations: by going to spherical harmonic representation, we diagonalized the action of rotation operator!
+implies the translation algebra is abelian: we have $d-$copies of the algebra $\R$.
 
-Let's write $\partial_\f$ operator back in Cartesian coordinates. By the chain rule,
+\subsubsection{Translations, rotations, and dilations}
+\label{sec: translations, rotations, and dilations}
+In the previous subsection, we have given bunch of technical details regarding the definitions of mathematical concepts of algebras, groups, etc. Such definitions and technicalities will be barely needed, but are important for the sake of completeness.
+
+With the technicalities dealt with, we can now focus on deriving the Galilean and dilation algebras. We will do this by analyzing the relevant transformations to extract the algebras. Earlier, we showed that the translation algebra is generated by $\partial_i$ and this can be seen from the action of the translation group on scalar functions on the group space, i.e.
 \be 
-\frac{\partial}{\partial \f}=\frac{\partial x}{\partial \f}\frac{\partial}{\partial x}+\frac{\partial y}{\partial \f}\frac{\partial}{\partial y}+\frac{\partial z}{\partial \f}\frac{\partial}{\partial z}=x\partial_y-y\partial_x
+e^{a_i\partial_i}f(x_i)=f(x_i+a_i)
 \ee 
-as can be checked from the relations $x=r\sin\theta\cos\f$, $y=r\sin\theta\sin\f$, and $x=r\cos\theta$.
+But this can be generalized further: if the action of the group changes a parameter $\ka_i$ to $\ka_i+a_i$, the relevant element of the algebra is $\frac{\partial}{\partial\ka_i}$, i.e. $\exp{a_i\frac{\partial}{\partial\ka_i}}f(\ka_i)=f(\ka_i+a_i)$, for any $\ka_i=\ka_i(x_j)$.
 
-In the standard spherical coordinates system that we have chose above, $\f$ is the angle in the $x-y$ plane and the relevant generator turned out to be $x\partial_y-y\partial_x$. But there is nothing special about these coordinates; if we rotate in $i-j$ plane with an angle $\theta_{ij}$, the generator then would be $m_{ij}=x_i\partial_j-x_j\partial_i$ which would lead
+Let's illustrate this with scaling transformations, i.e. $x^i\rightarrow e^{\lambda}x^i$ for $\lambda\in\R$.\footnote{
+Note that this transformation does not change the \emph{direction} of $x_i$ as $e^{\lambda}\ge 0$. This is intentional because the transformation $x_i\rightarrow -x_i$ is not part of the dilation group.} This is a one dimensional group and is called the dilation group. Clearly, dilation does not translate $x^i$; however, we see that it does translate the logarithm of the norm of $x_i$:
 \be 
-e^{\theta_{ij}m_{ij}}f(\br)=f(\br')
+\lambda : \half\log(x_i x_i)\rightarrow \half\log(x_i x_i)+\lambda
 \ee 
-where the vector $\br'$ is the vector $\br$ rotated in $i-j$ plane with an angle $\theta_{ij}$.
-
-Even though we showed for $d=3$, the situation generalizes: $m_{ab}=x_a\partial_b-x_b\partial_a$ generate the $so(d)$ algebra and one can check that the commutation rule in \equref{eq: rotation algebra} is satisfied!
-
-Let's now consider another algebra, called \emph{dilation algebra} $d(1)$. There may be higher dimensional generalizations of it but we will not care; we basically care for this one dimensional algebra whose action on a function is \emph{dilation} (scaling) of its parameter, i.e. $f(x)\rightarrow f(e^\lambda x)$, where we choose $e^\lambda$ to ensure that the dilation is a positive number (otherwise the transformation would include \emph{inversions} as well).
-
-We note that this is a one dimensional algebra, i.e. it scale all coordinates equivalently: $(x_1,x_2,\dots)\rightarrow(e^\lambda x_1,e^\lambda x_2,\dots)$. So let's switch to generalized spherical coordinates, i.e. $(x_1,x_2,\dots, x_d)\rightarrow (r,\theta_1,\dots,\theta_{d-1})$. In this new coordinates, the scale transformation is simply the change of $r\rightarrow e^\lambda r$ with unchanged angles $\theta_i$.
-
-With our preferred coordinates, let's proceed as before and consider, this time, the \emph{Mellin representation} of the function $f(r)$, i.e.
+Therefore, we can immediately write down the differential representation of the element in the dilation algebra $d(1)$:
 \be 
-f(r)=\int\limits_{c-i\infty}^{{c+i\infty}}\frac{ds}{2\pi i}r^{-s}\tl f(s)
+d(1) = \left\{\frac{\partial}{\partial\left(\half\log(x_i x_i)\right)}\right\}
 \ee 
-where the integration is over some contour in the complex plane, depending on the location of the poles of $f(r)$, but that will not be important. We then consider
+If we define the norm $r=\sqrt{x_ix_i}$, then $\half\log(x_i x_i)=\log(r)$ and $\partial/\partial\log(r)=r\frac{\partial}{\partial r}$. As $=r\frac{\partial}{\partial r}=x_i\partial_i$,\footnote{One intuitive way to see this is to note that $r\partial_r$ is invariant under rotations, hence we need an $so(d)$ scalar (i.e. no open indices). The only such scalar with one partial derivative is $x_i\partial_i$.} we conclude
 \be 
-f(\lambda r)=&\int\limits_{c-i\infty}^{{c+i\infty}}\frac{ds}{2\pi i}(e^ r)^{-s}\tl f(s)
-=\int\limits_{c-i\infty}^{{c+i\infty}}\frac{ds}{2\pi i} e^{-\lambda s} r^{-s}\tl f(s)
-=\int\limits_{c-i\infty}^{{c+i\infty}}\frac{ds}{2\pi i} e^{\lambda \partial/\partial(\log r)} r^{-s}\tl f(s)
-\\&=e^{\lambda \partial/\partial(\log r)}\int\limits_{c-i\infty}^{{c+i\infty}}\frac{ds}{2\pi i}  r^{-s}\tl f(s)
-=e^{\lambda\partial/\partial(\log r)}f(r)=e^{\lambda r\partial/\partial r}f(r)
+d(1)=\left\{x_i\partial_i\right\}
 \ee 
-This shows that the generator of the dilation group $d(1)$ is $r\partial_r$ in spherical coordinates. We can convert this back to Cartesian coordinates as $r\partial_r=x_a\partial_a$,\footnote{This is easy to see: $r\partial_r$ is angle-independent, hence it is an $so(d)$ scalar, i.e. invariant under rotations. The only invariant we can construct which has one partial derivative $\partial_a$ is $x_a\partial_a$.} thus we say the dilation group $d(1)$ is generated by $d=x_a\partial_a$.
+which is the generator of scaling transformations, i.e.
+\be 
+e^{\lambda x^i\partial_i}f(x^i)=f(e^\lambda x^i)
+\ee 
 
-\subsubsection{Basics of exponential map: from Lie algebras to Lie groups}
+A somehow more nontrivial example can be given by rotations. In $\R^d$, rotation transforms a vector $x_i$ to $x_i'$ by a matrix multiplication in Cartesian coordinates, i.e.
+\be 
+x_i'=M_{ij}x_j
+\ee 
+Clearly we do not have a translation. However, we can switch to generalized spherical coordinates such that
+\be 
+\label{eq: generalized spherical coordinates}
+x_1=&r\sin\theta_1\sin\theta_2\dots \sin\theta_{d-3}\sin\theta_{d-2}\cos\f\\
+x_2=&r\sin\theta_1\sin\theta_2\dots \sin\theta_{d-3}\sin\theta_{d-2}\sin\f
+\\
+x_3=&r\sin\theta_1\sin\theta_2\dots \sin\theta_{d-3}\cos\theta_{d-2}
+\\
+x_4=&r\sin\theta_1\sin\theta_2\dots \cos\theta_{d-3}
+\\\vdots& \\
+x_d=&r\cos\theta_1
+\ee 
+If we now do a rotation in $x_1-x_2$ plane by an angle $\a$, the transformation is simply  a translation, i.e.
+\be 
+\a : (r,\theta_1,\dots,\theta_{d-3},\f)\rightarrow (r,\theta_1,\dots,\theta_{d-3},\f+\a)
+\ee 
+hence we can immediately write down the generator of the rotation as $\frac{\partial}{\partial\f}$. But by chain rule, it simply reads as
+\be 
+\frac{\partial}{\partial\f}=\frac{\partial x_i}{\partial \f}\frac{\partial}{\partial x_i}=x_1\frac{\partial}{\partial x_2}-x_2\frac{\partial}{\partial x_1}
+\ee 
+which indicates that a rotation in $x_1-x_2$ plane is generated by $x_1\frac{\partial}{\partial x_2}-x_2\frac{\partial}{\partial x_1}$. But there is nothing special about this plane and we can always choose other spherical coordinates where $\f$ lies in $x_i-x_j$ plane, hence we conclude
+\be 
+m_{ij}=x_i\partial_j-x_j\partial_i
+\ee 
+generates a rotation in $x_i-x_j$ plane. By exponentiation, we can then write
+\be 
+e^{\theta_{ij}m_{ij}}f(x_k)=f(M_{kl}x_l)
+\ee 
+where $M_{kl}$ is the rotation matrix that rotates $\vec{x}$ in $x_i-x_j$ plane by an angle $\theta_{ij}$.
+
+Unlike translations or dilations, the algebra of rotations is nontrivial, i.e. we have \emph{non-zero} structure constants! That's a fancy way of saying that rotations in different planes do not commute, e.g. rotating in $x-y$ plane by $\pi/3$ and then rotating in $y-z$ plane by $\pi/6$ yields a different vector than the one we obtain by the reverse order of rotations. We can see this explicitly as 
+\be 
+m_{12}m_{23}-m_{23}m_{12}=x_1\partial_3-x_3\partial_1=m_{13}
+\ee 
+which actually tells us that the difference of whether we apply $x-y$ rotation or $y-z$ rotation is itself equivalent to a rotation in $x-z$ plane! One can actually compute all possible cases and write down that
+\be 
+[m_{ij},m_{kl}]=\eta_{il}m_{jk}+\eta_{jk}m_{li}+\eta_{ik}m_{lj}+\eta_{jl}m_{ik}
+\ee
+Clearly, this contrasts with the commutators for the generators of translation and dilation algebras, which we will denote as $p_i$ and $d$: $[p_i,p_j]=0$, $[d,d]=0$ (rather trivially).
 
 
-\begin{itemize}
-	\item what is a group?
-	\item galilean transformations as a group
-	\item Relativity and Lorentzian transformations
-	\item Poincare group
-\end{itemize}
+Now that we constructed the individual algebras for translations, dilations, and rotation, we can try to combine them to generate bigger algebras. A pedestrian way to do this is to use their differential forms and compute the commutators directly; for instance,
+\be 
+[p_i,d]=\partial_i(x^j\partial_j)-x^j\partial_j\partial_i=\partial_i=p_i
+\ee 
+With explicit computation, we can then write down
+\bea[eq: commutation relations for scale and galilean]
+[p_i,m_{jk}]=&\eta_{ij}p_k-\eta_{ik}p_j\\
+[p_i,d]=&p_i\\
+[m_{ij},d]=&0
+\eea 
 
-\subsection{Scale and conformal algebras}
-\begin{itemize}
-	\item discussion of algebras from a pure mathematical point of view
-\end{itemize}
+
+\subsection{Conformal algebra}
+\subsubsection{Special conformal transformations}
+In the previous section, we reviewed the mathematical background on groups and algebras, and showed that the algebra of translation, rotation, and dilation symmetries can be extracted from their action via exponential map.\footnote{Our procedure is non-canonical: one usually starts with algebra abstractly, deals with its representations, and move on to groups with exponential map. We instead glossed over representations and started with the action of the symmetry to derive the algebra. I believe this ordering is more pedagogical for a physicist.} As algebras, they have the elements
+\be 
+p_i=\partial_i\;,\quad d=x_i\partial_i\;,\quad m_{ij}=x_i\partial_j-x_j\partial_i
+\ee 
+with the commutation relations given in \equref{eq: commutation relations for scale and galilean}. As group elements, they act as
+\be 
+D(\lambda):& x_i\rightarrow e^\lambda x_i\\
+M(\a):& (r,\theta_i,\f)\rightarrow (r,\theta_i,\f+\a)\\
+P(a_i):& x_i\rightarrow x_i+a_i
+\ee 
+
+There is an interesting observation: both dilations and rotations leave two points invariant: origin and the infinity.\footnote{If we consider a limiting point to infinity, then rotations would change its direction. But if we consider infinity as a point and add it to $\R^d$, then the action of the rotation on the resultant space is indeed invariant if acted on the point $\infty$, see \figref{\ref{fig: conformal transformations on Sn}}.} In comparison, translations leave only infinity invariant, i.e. $0+a_i\ne 0$ but $\infty+a_i=\infty$. Therefore, translations \emph{break} the symmetry between origin and the infinity. It is thus tempting to consider another transformation, which moves the infinity but keeps the origin fixed. We can achieve this by exchanging the origin and the infinity before and after we do a usual translation!
+
+\begin{figure}
+	\centering 
+	$(a)\begin{aligned}
+		\includegraphics[scale=.05]{stereographic.pdf}
+	\end{aligned}\quad 
+	(b)\;\;
+	\begin{aligned}
+		\includegraphics[scale=.025]{transformations_on_sphere.pdf}
+	\end{aligned}$	
+	\caption[Conformal transformations on $S^n$]{\label{fig: conformal transformations on Sn}\textbf{(a)} The Euclidean space $\R^d$ is topologically uncompact; one can construct a one-point compactification of it, which is $d-$sphere: $S^d=\R^d\bigcup\{\infty\}$. One way to see this correspondence is through a stereographic projection, which is shown in the image: we embed $S^d$ and $\R^d$ into $\R^{d+1}$ such that the south pole of the sphere is at the origin of $\R^d$ (their only common point in $\R^{d+1}$). We then consider a line in $\R^{d+1}$ passing through the north pole of $S^d$, and identify the points that it intersects on $S^d$ and on $\R^d$, e.g. $\hat{x}$ and $P$. This procedure maps origin of $\R^d$ to the south pole, inside the unit circle of $\R^d$ to south hemisphere, and outside the unit circle of $\R^d$ to the north hemisphere. The only point that is unmatched by this procedure is the north pole itself, which we identify with $\infty$. Lastly, we see in the image that the axis that connects the poles is labeled as $r$ because different altitudes on $S^d$ correspond to different norms on the $\R^d$, whereas $\theta$ schematically refers to the angular part of a position in $\R^d$, i.e. $(\theta_i,\f)$ in \equref{eq: generalized spherical coordinates}. \textbf{(b)} Conformal transformations as movements of points on $S^d$. Under rotations (top-left), the $d-$sphere rotates such that altitudes remain unchanged. Under dilations (top-right), the sphere instead stretch on the south hemisphere and compress in the north hemisphere (or visa-versa) without rotation. Under translations (bottom-left), the sphere rotates about any particular axis (not necessarily around r as rotations do), but it also stretch and compress so that the north pole remains at the north pole. Special conformal transformations (bottom-right) has exactly the same effect, except the south pole remains unchanged instead of north pole. As expected, origin is unchanged by rotations, dilations, and special conformal transformations whereas infinity is unchanged by rotations, dilations, and translations.}
+\end{figure}
+
+One can in principle write down many transformations that exchange the origin with infinity but the simplest such transformation is \emph{inversion} $I$, which acts in one dimension as $x\rightarrow \frac{1}{x}$. Indeed, $x=0$ would go to $\infty$ and vise versa. In higher dimensions, we define it as\footnote{Note that this a discrete transformation: we only have two elements of the inversion group, the identity $E$ and the inversion $I$ with the relation $I*I=E$.}
+\be 
+I: x_i\rightarrow\frac{x_i}{x^2}
+\ee  
+
+Now, if we consider a translation in inverted coordinates, i.e. 
+\be 
+\label{eq: special conformal transformation}
+k_i: \frac{x_i}{x^2}\rightarrow \frac{x_i}{x^2}+a_i
+\ee 
+then this transformation leaves the origin invariant and moves infinity. We call this transformation \emph{special conformal transformations!}
+
+It is straightforward to check that 
+\be 
+x_i'=\frac{x_i+a_ix^2}{1+2a\.x+a^2x^2}
+\ee 
+satisfies $\frac{x_i'}{x_k'x_k'}= \frac{x_i}{x_kx_k}+a_i$, hence the transformation can be rewritten as\footnote{It is also straightforward to check that this transformation leaves origin invariant and moves the infinity:
+\be 
+\lim\limits_{x_i\rightarrow0}x_i'=&0\;,\quad \lim\limits_{x_i\rightarrow\infty}x_i'=&\frac{a_i}{a^2}
+\ee 
+}
+\be 
+k_i:  x_i\rightarrow\frac{x_i+a_ix^2}{1+2a\.x+a^2x^2}
+\ee 
+
+There is an advantage to the form presented in \equref{eq: special conformal transformation}: it is precisely a translation for the parameter $\ka(x_i)=\frac{x_i}{x^2}$, hence as discussed in \secref{\ref{sec: translations, rotations, and dilations}}, we can immediately write down the algebra element as
+\be 
+k_i=\frac{\partial}{\partial \left(\frac{x_i}{x^2}\right)}
+\ee 
+which then gives\footnote{
+We use chain rule to derive this. First note that
+\be 
+\frac{\partial}{\partial x_i}=\frac{\partial \left(\frac{x_k}{x^2}\right)}{\partial x_i}\frac{\partial}{\partial \left(\frac{x_k}{x^2}\right)}
+\ee 
+which gives
+\be 
+\frac{\partial}{\partial x_i}=\left(\delta_{ik}x^{-2}-2x_ix_kx^{-4}\right)\frac{\partial}{\partial \left(\frac{x_k}{x^2}\right)}
+\ee 
+Thus, we have
+\be 
+\frac{\partial}{\partial \left(\frac{x_i}{x^2}\right)}=M_{ik}\frac{\partial}{\partial x_k}
+\ee 
+for 
+\be 
+\left(\delta_{ik}x^{-2}-2x_ix_kx^{-4}\right)M_{kl}=\delta_{il}
+\ee
+We can then make an ansatz for $M_{kl}=c_1\delta_{kl}+c_2x_kx_l$ and solve for it.
+}
+\be 
+k_i=\left(x^2\delta_{ik}-2x_ix_k\right)\partial_k
+\ee 
+One can now use this explicit form to work out the new commutation relations:
+\bea 
+[k_i,k_j]=&0\\
+[k_i,d]=&-k_i\\
+[p_i,k_j]=&2m_{ij}-2\eta_{ij} d\\
+[m_{ij},k_l]=&\eta_{jl}k_i-\eta_{il}k_j
+\eea 
+
+We observe a similarity between translations and special conformal transformations in the commutation relations. As our way of deriving the special conformal algebra relied on the action of translations on inverted coordinates, this similarity is no surprise to us. We can use this similarity to rewrite the full set of commutation relations as
+\bea[eq: conformal algebra] 
+[m_{ij},m_{kl}]=&\eta_{il}m_{jk}+\eta_{jk}m_{li}+\eta_{ik}m_{lj}+\eta_{jl}m_{ik}
+\\
+[m_{ij},p^\pm_k]=&\eta_{jk}p^\pm_i-\eta_{ik}p^\pm_j
+\\
+[p_i^+,p_j^-]=&2\eta_{ij} d-2m_{ij}
+\\
+[p_i^\pm,d]=&\pm p_i
+\eea
+where we defined
+\be 
+p^+_i\coloneqq p_i\;,\quad p^-_i\coloneqq -k_i\;.
+\ee 
+The action of these transformations on $\R^d$ can be visualized by \emph{compactifying} the space to $S^d$, see \figref{\ref{fig: conformal transformations on Sn}} for details. In the next section, we will analyze how we can construct bigger algebras starting with these commutation relations.
+
+\subsubsection{(Semi)direct products of algebras}
+
+\subsubsection{Conformal algebra and conformal group}
+
 
 \subsection{Conformal algebra in the framework of QFTs}
 \begin{itemize}
 	\item Killing equations and relevant discussion
+	\item Relativity and Lorentzian transformations
+\item Poincare group
+\item generalization to conformal group
 \end{itemize}
 
-\section{Review: Quantum Field Theory}
-\subsection{some subsections}
+\section{How can the conformal symmetry be utilized?}
+\subsection{Review: how the Lorentz symmetry helps in quantum field theory}
+\subsubsection{Primer: basics of qft}
 \begin{itemize}
 	\item quantum mechanics, ward identities, path integral, quantization,
 	LSZ formalism, correlation functions
 \end{itemize}
-\subsection{Wigner's classication of operators: little group formalism}
-
-\section{Conformal field theories}
+\subsubsection{Reminder: Wigner's classication of operators -- little group formalism}
+\subsection{Extension to conformal symmetry}
 
 
 % END
