@@ -1,66 +1,68 @@
-This is BibTeX, Version 0.99d (TeX Live 2020)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: notes.aux
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: utphys.bst
 Database file #1: collectiveReferenceLibrary.bib
-Repeated entry---line 35884 of file collectiveReferenceLibrary.bib
+Repeated entry---line 35902 of file collectiveReferenceLibrary.bib
  : @article{Arkani-Hamed:2015bza
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 210759 of file collectiveReferenceLibrary.bib
+Repeated entry---line 210777 of file collectiveReferenceLibrary.bib
  : @inproceedings{Penedones:2016voo
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 273233 of file collectiveReferenceLibrary.bib
+Repeated entry---line 273251 of file collectiveReferenceLibrary.bib
  : @article{Karateev:2019pvw
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 274487 of file collectiveReferenceLibrary.bib
+Repeated entry---line 274505 of file collectiveReferenceLibrary.bib
  : @inproceedings{Simmons-Duffin:2016gjk
  :                                      ,
 I'm skipping whatever remains of this entry
 Warning--empty publisher in Goldenfeld:1992qy
 Warning--empty publisher in Cardy:1996xt
 Warning--there's a number but no series in barenblatt1996scaling
-You've used 46 entries,
+You've used 48 entries,
             2328 wiz_defined-function locations,
-            937 strings with 12622 characters,
-and the built_in function-call counts, 13752 in all, are:
-= -- 1368
-> -- 420
+            948 strings with 12852 characters,
+and the built_in function-call counts, 14149 in all, are:
+= -- 1410
+> -- 429
 < -- 0
-+ -- 161
-- -- 115
-* -- 1321
-:= -- 1643
-add.period$ -- 68
-call.type$ -- 46
++ -- 165
+- -- 117
+* -- 1337
+:= -- 1692
+add.period$ -- 72
+call.type$ -- 48
 change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 758
-empty$ -- 1415
-format.name$ -- 115
-if$ -- 3557
+cite$ -- 51
+duplicate$ -- 788
+empty$ -- 1473
+format.name$ -- 117
+if$ -- 3665
 int.to.chr$ -- 0
-int.to.str$ -- 46
-missing$ -- 161
-newline$ -- 173
-num.names$ -- 46
-pop$ -- 257
+int.to.str$ -- 48
+missing$ -- 164
+newline$ -- 181
+num.names$ -- 49
+pop$ -- 276
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 481
+skip$ -- 488
 stack$ -- 0
 substring$ -- 630
-swap$ -- 334
+swap$ -- 337
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 112
-width$ -- 48
-write$ -- 382
+while$ -- 114
+width$ -- 50
+write$ -- 402
 (There were 4 error messages)
