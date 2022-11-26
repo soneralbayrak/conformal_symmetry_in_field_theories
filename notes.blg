@@ -5,64 +5,69 @@ Reallocating 'name_of_file' (item size: 1) to 27 items.
 Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: utphys.bst
 Database file #1: collectiveReferenceLibrary.bib
-Repeated entry---line 35902 of file collectiveReferenceLibrary.bib
+Repeated entry---line 35987 of file collectiveReferenceLibrary.bib
  : @article{Arkani-Hamed:2015bza
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 210777 of file collectiveReferenceLibrary.bib
+Repeated entry---line 48244 of file collectiveReferenceLibrary.bib
+ : @article{Kravchuk:2018htv
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 210862 of file collectiveReferenceLibrary.bib
  : @inproceedings{Penedones:2016voo
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 273251 of file collectiveReferenceLibrary.bib
+Repeated entry---line 273336 of file collectiveReferenceLibrary.bib
  : @article{Karateev:2019pvw
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 274505 of file collectiveReferenceLibrary.bib
+Repeated entry---line 274590 of file collectiveReferenceLibrary.bib
  : @inproceedings{Simmons-Duffin:2016gjk
  :                                      ,
 I'm skipping whatever remains of this entry
 Warning--empty publisher in Goldenfeld:1992qy
 Warning--empty publisher in Cardy:1996xt
 Warning--there's a number but no series in barenblatt1996scaling
-You've used 48 entries,
+Warning--empty publisher in Schottenloher:2008zz
+You've used 68 entries,
             2328 wiz_defined-function locations,
-            948 strings with 12852 characters,
-and the built_in function-call counts, 14149 in all, are:
-= -- 1410
-> -- 429
+            1114 strings with 16547 characters,
+and the built_in function-call counts, 20586 in all, are:
+= -- 2095
+> -- 594
 < -- 0
-+ -- 165
-- -- 117
-* -- 1337
-:= -- 1692
-add.period$ -- 72
-call.type$ -- 48
-change.case$ -- 42
++ -- 229
+- -- 161
+* -- 1911
+:= -- 2441
+add.period$ -- 108
+call.type$ -- 68
+change.case$ -- 60
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 788
-empty$ -- 1473
-format.name$ -- 117
-if$ -- 3665
+cite$ -- 72
+duplicate$ -- 1134
+empty$ -- 2123
+format.name$ -- 161
+if$ -- 5345
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 164
-newline$ -- 181
-num.names$ -- 49
-pop$ -- 276
+int.to.str$ -- 68
+missing$ -- 238
+newline$ -- 267
+num.names$ -- 70
+pop$ -- 381
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 488
+skip$ -- 721
 stack$ -- 0
-substring$ -- 630
-swap$ -- 337
+substring$ -- 1023
+swap$ -- 503
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 114
-width$ -- 50
-write$ -- 402
-(There were 4 error messages)
+warning$ -- 4
+while$ -- 170
+width$ -- 70
+write$ -- 568
+(There were 5 error messages)

@@ -1330,7 +1330,7 @@ g(d-1,1)=t(d-1,1)\oplus_s \left(so(d-1,1)\oplus d(1)\right)
 
 
 
-\subsubsection{Conformal algebra and conformal group}
+\subsubsection{Realization of conformal algebra in the embedding space}
 The commutation relations of the generators of \emph{general conformal algebra} $gc(d)$ was given in \equref{eq: conformal algebra}:
 \bea[]
 [m_{ij},m_{kl}]=&\eta_{il}m_{jk}+\eta_{jk}m_{li}+\eta_{ik}m_{lj}+\eta_{jl}m_{ik}
@@ -1345,6 +1345,7 @@ The action of these operations can be best described in $S^d$, which is the comp
 
 A somewhat nicer way to understand the conformal algebra is through the re-organization of its elements in terms of $M_{IJ}$ as follows:
 \be 
+\label{eq: mapping of generators from physical to embedding space}
 m_{ij}=&M_{ij}\\
 d=&M_{0,-1}\\
 p_i^+=&M_{i,-1}-M_{i,0}\\
@@ -1352,6 +1353,7 @@ p_i^-=&M_{i,-1}+M_{i,0}
 \ee 
 where the index $I=-1,0,1,\dots,d$ whereas the index $i=1,2,\dots,d$. If we now work out the commutation relations for $M_{IJ}$, we find that
 \be 
+\label{eq: embedding space algebra}
 [M_{IJ},M_{KL}]=&\eta_{IL}M_{JK}+\eta_{JK}M_{LI}+\eta_{IK}M_{LJ}+\eta_{JL}M_{IK}
 \ee 
 which is precisely the same algebra as \equref{eq: rotation algebra} with the metric $\eta_{IJ}=\textrm{diag}\left(-1,1,\dots,1\right)$. Therefore, we conclude that the Euclidean conformal algebra is isomorphic to the Lorentzian rotation algebra in two higher dimensions:\footnote{As a consistency check, we see that the number of generators match as they should: $\frac{d(d-1)}{2}+d+d+1=\frac{(d+2)(d+1)}{2}$.}
@@ -1371,7 +1373,7 @@ X_I=\left(X_{-1}(x^2),X_{0}(x^2),x_i\right)
 \ee 
 We would like to find the functions $X_{-1,0}$.
 
-To find the functional form of $X_I$, we use the fact that conformal transformations act as rotations on $X_I$. We first change our coordinate system so that $x_i$ reads as $(x,0,\dots,0)$.\footnote{We can do this without losing generality by choosing our coordinate system such that the unit vector $\hat{e}_1$ points along $\vec{x}$.} We then have $X_I=\left(X_{-1}(x^2),X_{0}(x^2),x,0,\dots,0\right)$. Let's now consider  an infinitesimal special conformal transformation; by \equref{eq: finite special conformal transformation} we get $x_i=(x,0,\dots)\rightarrow x_i'=(x-\a_1 x^2,\a_{i\ne 1}x^2)$, hence
+To find the functional form of $X_I$, we use the fact that conformal transformations act as rotations on $X_I$. We first change our coordinate system so that $x_i$ reads as $(x,0,\dots,0)$.\footnote{We can do this without losing generality by choosing our coordinate system such that the unit vector $\hat{e}_1$ points along $\vec{x}$.} We then have $X_I=\left(X_{-1}(x^2),X_{0}(x^2),x,0,\dots,0\right)$.\footnote{Note that we are abusing the notation here: $x\equiv\sqrt{x_ix_i}$.} Let's now consider  an infinitesimal special conformal transformation; by \equref{eq: finite special conformal transformation} we get $x_i=(x,0,\dots)\rightarrow x_i'=(x-\a_1 x^2,\a_{i\ne 1}x^2)$, hence
 \be 
 \left(X_{-1}(x^2),X_{0}(x^2),x_i\right) \rightarrow
 \left(X_{-1}(x^2-2a_1 x^3),X_{0}(x^2-2\a_1 x^3),x-\a_1 x^2,\a_{i\ne 1}x^2\right)
@@ -1382,7 +1384,7 @@ X_1\rightarrow X_1+c_{-1}(\a_i)X_{-1}(x^2)+c_0(\a_i)X_0(x^2)
 \ee 
 for some functions $c_i$ linear in $\a_i$. With $X_1=x$ and $X_1'=x-\a_1x^2$, this is only possible if $X_{-1,0}$ are linear in $x^2$, thus we conclude
 \be 
-X_i=\left(a_{-1}+b_{-1}x^2,a_{0}+b_{0}x^2,x_i\right)
+X_I=\left(a_{-1}+b_{-1}x^2,a_{0}+b_{0}x^2,x_i\right)
 \ee 
 for some unknowns $a_i$ and $b_i$. Let us again go back to our earlier coordinate system where $X_I=\left(a_{-1}+b_{-1}x^2,a_{0}+b_{0}x^2,x,0,\dots\right)$, and this time consider a dilation $x\rightarrow \lambda x$. We then have
 \be 
@@ -1404,21 +1406,102 @@ Let us now  use these two constraints to find the expressions for $a_i$ and $b_i
 \be 
 X^2=\left(b_0^2-b_{-1}^2\right)x^4+\left(1+2a_0b_0-2a_{-1}b_{-1}\right)x^2+\left(a_0^2-a_{-1}^2\right)
 \ee
-This should not change under an arbitrary conformal transformation $x\rightarrow x'$. This is only possible if it is independent of $x$, which relate $a_i$ and $b_i$, allowing us to write 
+This should not change under an arbitrary conformal transformation $x\rightarrow x'$. This is only possible if it is independent of $x$,\footnote{\label{footnote: why null cone}
+	We can actually do more than this by noting that $X^2$ should not only be constant but also remain invariant under our identification $X\rightarrow \lambda X$. We can then choose $X^2=0$, which completely fixes the form of $X_A$. However, despite being a huge simplification, the choice of $X^2=0$ is not unique in that $X^2=\infty$ is also invariant under $X\rightarrow \lambda X$. We can of course say that $\infty$ is not part of $\R^{d+1,1}$, hence $X^2$ can't be chosen that way, but this could be circumcised via the compactification of the space by including the infinity as a point. There are probably mathematical arguments against these so at the end $X^2=0$ can be the unique choice from this perspective (or even that $X^2=\infty$ is equivalent to $X^2=0$), however we do not need any of these arguments. We will take the longer path, leave $X^2=\text{constant}$ without specifying what it is and then determine it by matching the action of conformal transformation on $\R^d$ and $\R^{d+1,1}$, which will unique fix that $X^2=0$.
+} which relate $a_i$ and $b_i$, allowing us to write
 \be 
-X_i=\left(c\left[\frac{1+2a_0b_0}{2b_0}+b_0x^2\right],a_{0}+b_0x^2,x_i\right)
+X_I=\left(c\left[\frac{1+2a_0b_0}{2b_0}+b_0x^2\right],a_{0}+b_0x^2,x_i\right)
 \ee  
-for an unknown $c=\pm 1$. We can set $c=1$ without losing any generality (we can at most reflect $X_{-1}$ direction as our definition); furthermore we can set $b_0=\half$ by using $X\sim\lambda X$. Thus
+for an unknown $c=\pm 1$. We can set $c=1$ without losing any generality (we can at most reflect $X_{-1}$ direction as our definition); furthermore we can set $b_0=-\half$ by using $X\sim\lambda X$. Thus\footnote{Note that we also use $X^{(-1)}=-X_{(-1)}$ when we go from $X_I$ to $X^I$.}
 \be 
-X_i=\left(1+a_0+\half x^2,a_{0}+\half x^2,x_i\right)
+\label{eq: form of Xi}
+X^I=\left(1-a_0+\half x^2,a_{0}-\half x^2,x^i\right)
 \ee 
-We are almost there! It is very tempting to conjecture that $a_0=-\half$, giving us a very nice final result of $X_i=\left(\half+\half x^2,-\half+\half x^2,x_i\right)$, and this is indeed correct! But to see why, we need to fix an ambiguity in our $X_i\leftrightarrow x_i$ relation.
+We are almost there! It is very tempting to conjecture that $a_0=\half$, giving us a very nice final result of $X^I=\left(\half+\half x^2,\half-\half x^2,x^i\right)$, and this is indeed correct! But to see why, we need to fix an ambiguity in our $X_i\leftrightarrow x_i$ relation.
 
-To see the problem, let's remind ourselves that $X_I\sim\lambda X_I$, hence a position $x_i$ corresponds to any $\lambda X_i$, which is another way to say that our point $x_i$ in $\R^d$ corresponds to a \emph{ray} $X_i$. However, we would like to extract the point $x_i$ out of the ray $X_i$ unambiguously, and we do this by \emph{fixing the gauge}, i.e. removing the redundancy.
+To see the problem, let's remind ourselves that $X^I\sim\lambda X^I$, hence a position $x^i$ corresponds to any $\lambda X^i$, which is another way to say that our point $x^i$ in $\R^d$ corresponds to a \emph{ray} $X^i$. However, we would like to extract the point $x^i$ out of the ray $X^i$ unambiguously, and we do this by \emph{fixing the gauge}, i.e. removing the redundancy. Looking at the form of $\left(X^{-1},X^0,X^i\right)$ in \equref{eq: form of Xi}, we can declare that we have the relation
+\be 
+x^i=\frac{X^i}{X^+}
+\ee 
+where we define the \emph{lightcone coordinates}\footnote{In Minkowski spacetime with the metric $\eta=\text{diag}(-1,1,1,1)$, any coordinate $X^0\pm X^i$ is called a \emph{lightcone coordinate}, because light moves along these coordinates. Even though the embedding space $\R^{d+1,1}$ is not exactly the physical space, it is still endowed with a Lorentzian metric hence $X^{-1}\pm X^{0}$ are called lightcone coordinates.}
+\be 
+X^\pm=X^{(-1)}\pm X^{(0)}
+\ee 
+We now have an unambiguius mapping from $X_I$ to $x_i$!
+
+With our mapping fix, let us now consider an infinitesimal conformal transformation. In the embedding space, the general rotation transformation reads as
+\be 
+X_I'=e^{\w_{IJ}}X^J
+\ee 
+where $\w_{IJ}$ is the rotation matrix. If the transformation is infinitesimal, we then have
+\be 
+\label{eq: infinitesimal transformation in the embedding space}
+\de X_I=\delta w_{IJ}X^J
+\ee 
+The rotation matrices satisfy the algebra in \equref{eq: embedding space algebra}. In particular, this means
+\be 
+\label{eq: infinitesimal conformal transformations}
+\de\w_{ij}=\de\theta_{ij}\;,\quad \de\w_{0,-1}=\delta\lambda\;,\quad \de\w_{i,-1}=\frac{\de c_i+\de a_i}{2}\;,\quad \de\w_{i,0}=\frac{\de c_i-\de a_i}{2}
+\ee 
+which follows from \equref{eq: mapping of generators from physical to embedding space}; here, $\theta,\lambda,c,a$ denote the parameters for rotation, dilation, translation, and special conformal transformation respectively.\footnote{It is straightforward to see $\theta_{ij}$ and $\lambda$ generate rotations and dilations due to their index structures. To decide which one of $\{a_i,c_i\}$ generate translations (and the other special conformal transformations), we will take a pedestrian way and decide at the very end by checking their infinitesimal action, see below!} The $\de$ in front of them reminds us that we are working with infinitesimal transformations!
+
+Under an infinitesimal transformation, we have
+\be 
+x^i\rightarrow\frac{X^i+\de X^i}{X^++\de X^+}=\frac{X^i}{X^+}+\frac{\de X^i}{X^+}-\frac{X^i\de X^+}{X_+^2}
+\ee 
+thus $\de x^i=x_i'-x_i$ reads as
+\be 
+\de x^i=\de X^i-x^i\de X^+
+\ee 
+where we use the fact that $X^+=1$ in our choice of Poincar\'e section in \equref{eq: form of Xi}. By using $X^{-1}=-X_{-1}$ and contracting both sides with $\eta_{ij}$,\footnote{For our particular case here this is simply $\de_{ij}$ as we are working with $\R^d$, i.e. Euclidean signature.} we get
+\be 
+\de x_i=\delta w_{iJ}X^J+x_i\delta w_{-1,J}X^J-x_i\delta w_{0,J}X^J
+\ee 
+where we used \equref{eq: infinitesimal transformation in the embedding space}.
+
+Let us analyze the equation above. In components, it reads as
+\be 
+\de x_i=\delta w_{i,-1}X^{-1}+\delta w_{i0}X^0+\delta w_{ij}x^j+x_i\de \w_{-1,0}+x_i x^j\left(\de\w_{-1,j}-\de\w_{0,j}\right)\ee 
+which with \equref{eq: infinitesimal conformal transformations} becomes
+\be 
+\de x_i=\frac{\de c_i}{2}+\delta \theta_{ij}x^j-\delta\lambda x_i+\frac{\de a^k}{2}\left(X^-\eta_{ik}-2x_ix_k\right)
+\ee 
+The first three terms are the expected infinitesimal translation, rotation, and dilation. The last term is equivalent to a special conformal transformation only if
+$X^-=x^2$,\footnote{See \equref{eq: finite special conformal transformation}.} yielding the constraint
+\be 
+X^-=X^{-1}-X^0=1-2a_0+x^2=x^2
+\ee 
+thus we conclude $a_0=\half$. This completes the proof: we have a map between $x^i\in\R^d$ and $X^I\in\R^{d+1,1}$ via
+\be 
+\label{eq: poincare section}
+X^I=X^+\left(\frac{1+x^2}{2},\frac{1-x^2}{2},x^i\right)
+\ee 
+for an arbitrary nonzero $X^+$. One key observation is that this $X^I$ not only satisfies $X_IX^I=\text{constant}$ but actually $X_I X^I=0$,\footnote{
+As we discussed in the Footnote~\ref{footnote: why null cone}, we expected this result. Nevertheless, I am not aware if there is other arguments which require the matching to be such:  I have checked several resources which use/discuss the embedding space formalism, \cite{Cornalba:2009ax,Weinberg:2010fx,Hepner:1962zz,Mack:1973mq,Luscher:1974ez,Kologlu:2019mfz,Ferrara:1973yt,DiFrancesco:1997nk,Dirac:1936fq,Dobrev:1977qv,Simmons-Duffin:2012juh,Costa:2011mg,Schottenloher:2008zz,Ferrara:1973eg,Kravchuk:2018htv},\footnotemark but I could not find a satisfactory answer. I expect there exists studies where this is  detailed (possibly in math literature), but the only reference I could find was \cite{Boulware:1970ty} (see eqn b.5 there), where they derive the requirement of nullness through our way as well. Another reference where at least $X_AX^A\ne 0$ is considered is \cite{Mack:1969rr} (see eqn. (IV.1) there); however, they simply choose the null cone with the reasoning that it is also invariant under $X\rightarrow \lambda X$, which I find unsatisfactory.}
+\footnotetext{Most papers simply refer to earlier ones without a detailed explanation. I checked up to $\sim100$ years old papers, but some of them are not in English (i.e. \cite{Kastrup:1962zza,Kastrup:1964zz}), so it is likely that I'm missing the old fundamental ones because of the language barrier. In addition, the terminology in old papers are rather different, making the task rather difficult. For instance, Kastrup derives the relation between the physical space and the embedding space by starting with the geometric interpretation of the special conformal group in \cite{Kastrup:1966zzc}, but one could easily miss that he is actually building the relation between $x_i$ and $X_A$ in our notation. For the record, he does not dicuss $X_AX^2=0$, he simply introduces $X^+$ ($\lambda$ in his notation) such that $X^2=0$ without even mentioning it.
+
+}
+ therefore we say
+\begin{quotation}
+\emph{
+	There is a one to one map between points in $\R^d$ and null rays in $\R^{d+1,1}$.}
+\end{quotation}
+
+Our choice of Poincar\'e section in \equref{eq: poincare section} works well everywhere except for a specific ray: $\{X^I|X^I\sim \lambda X^I, X^+=0\}$, i.e. the ray for which $X^+=0$.  Our previous reasoning still applies here, so that it needs to be of the form $(\half+b x^2,-\half-bx^2,x^i)$ ($X^{0,-1}$ are linear in $x^2$) where we used $X\sim\lambda X$. But $X_IX^I=\text{constant}$ dictates $x^i=0$, leaving us with one point: $(\half,-\half,0)$.\footnote{It may seem interesting that $X^+=0$ ray is also a null ray! A priori it did not have to be so! But as we will see below, this ray actually corresponds to the point infinity in the compactification of $\R^d$, which can be reached by conformal transformations. Thus this ray should be reachable by rotation from other rays, hence it needs to be null as well!} In lightcone coordinates, this is $X^-=1, X^{\text{rest}}=0$. This is awfully similar to the origin, i.e. $X^+=1, X^{\text{rest}}=0$. I'm sure some readers have already guessed by now; this ray corresponds to the infinity.\footnote{Another way to obtain the $X^+=0$ ray is to start with \equref{eq: poincare section} and take $X^+\rightarrow 0$. To get a nonzero and finite point, we need to take $x^2\rightarrow\infty$ with $X^+x^2$ remaining constant. This takes us to $(\half,-\half,0)$ as well. In this approach, it is clearer that $X^+=0$ null-ray corresponds to $x=\infty$.}
+
+We conclude
+\be 
+\label{eq: poincare section with infinity}
+X^I=\left\{\begin{aligned}
+X^+\left(\frac{1+x^2}{2},\frac{1-x^2}{2},x^i\right) && x\in\R^d\\
+X^-\left(\half,-\half,0\right) && x=\infty
+\end{aligned}\right.
+\ee 
+
 \begin{itemize}
-	\item poincare gauge
-	\item lightcone coordinates
-	\item show we need $X^2=0$, hence $a_0=-\half$. To do this, see b.5 of PhysRevD.2.293
+\item asymmetry is because we choose $X^I/X^+$; we could have chosen $X^I/X^-$
+\item $X^+\leftrightarrow X^-$ corresponds to inversion.
+\item Other Poincar\'e section possible, this one is standard 
 \end{itemize}
 
 
