@@ -79,11 +79,34 @@
 \newlength{\fullwidthlen}
 \setlength{\fullwidthlen}{\marginparwidth}
 \addtolength{\fullwidthlen}{\marginparsep}
-\newenvironment{fullwidth}{%
-	\begin{adjustwidth*}{}{-\fullwidthlen}%
-	}{%
-	\end{adjustwidth*}%
+
+\def\beginfullwidth#1\endfullwidth{%
+\checkoddpage\ifoddpage\strictpagecheck
+\begin{adjustwidth*}{0pt}{-\fullwidthlen}%
+	#1
+\end{adjustwidth*}%
+\else\strictpagecheck
+\begin{adjustwidth*}{-\fullwidthlen}{0pt}%
+	#1
+\end{adjustwidth*}%
+\fi
 }
+
+\def\begincenter#1\endcenter{%
+\calccentering{\unitlength}
+\checkoddpage\ifoddpage\strictpagecheck
+\begin{adjustwidth*}{\unitlength}{-\unitlength}%
+	#1
+\end{adjustwidth*}%
+\else\strictpagecheck
+\begin{adjustwidth*}{-\unitlength}{\unitlength}%
+	#1
+\end{adjustwidth*}%
+\fi
+}
+
+
+
 %
 %%% ENSURE PARAGRAPHS ARE LEAST SPLIT BETWEEN PAGES
 \clubpenalty=10000
@@ -371,6 +394,7 @@
 \newcommand   \ind   {\mathop{\mathrm{ind}}}
 \newcommand   \Vol   {\mathrm{Vol}}
 \newcommand   \vol   {\mathrm{vol}}
+\newcommand   \diag  {\mathrm{diag}}
 %
 %%% CALIGRAPHIC CAPITALS
 \newcommand   \cA {\mathcal{A}}
@@ -400,6 +424,34 @@
 \newcommand   \cY {\mathcal{Y}}
 \newcommand   \cZ {\mathcal{Z}}
 %
+
+%%%%%%% Fractur Capitals %%%%%%%
+\newcommand   \fA {\mathfrak{A}}
+\newcommand   \fB {\mathfrak{B}}
+\newcommand   \fC {\mathfrak{C}}
+\newcommand   \fD {\mathfrak{D}}
+\newcommand   \fE {\mathfrak{E}}
+\newcommand   \fF {\mathfrak{F}}
+\newcommand   \fG {\mathfrak{G}}
+\newcommand   \fH {\mathfrak{H}}
+\newcommand   \fI {\mathfrak{I}}
+\newcommand   \fJ {\mathfrak{J}}
+\newcommand   \fK {\mathfrak{K}}
+\newcommand   \fL {\mathfrak{L}}
+\newcommand   \fM {\mathfrak{M}}
+\newcommand   \fN {\mathfrak{N}}
+\newcommand   \fO {\mathfrak{O}}
+\newcommand   \fP {\mathfrak{P}}
+\newcommand   \fQ {\mathfrak{Q}}
+\newcommand   \fR {\mathfrak{R}}
+\newcommand   \fS {\mathfrak{S}}
+\newcommand   \fT {\mathfrak{T}}
+\newcommand   \fU {\mathfrak{U}}
+\newcommand   \fV {\mathfrak{V}}
+\newcommand   \fW {\mathfrak{W}}
+\newcommand   \fX {\mathfrak{X}}
+\newcommand   \fY {\mathfrak{Y}}
+\newcommand   \fZ {\mathfrak{Z}}
 %%% START THE DOCUMENT
 \bibliographystyle{\bibliographystylefile}
 \begin{document}
@@ -415,14 +467,14 @@
 \end{titlingpage}
 \frontmatter
 \input{frontmatter}
-\begin{fullwidth}
+\beginfullwidth
 \clearpage
 \tableofcontents
 \clearpage
 \listoftables
 \clearpage
 \listoffigures
-\end{fullwidth}
+\endfullwidth
 \mainmatter
 \input{mainmatter}
 \appendix 
@@ -431,17 +483,13 @@
 \input{backmatter}
 %%% Bibliography
 \let\chapter\chapterTemporary
-\ifnum\bibliographymarginchoice=1
+\checkoddpage\ifoddpage\strictpagecheck
 	\begin{adjustwidth*}{0pt}{-\fullwidthlen}%
 	\bibliography{\bibliographyfile}{}
 \end{adjustwidth*}%
-\else\ifnum\bibliographymarginchoice=2 	
-	\begin{adjustwidth*}{-\fullwidthlen}{0pt}%
+\else\strictpagecheck
+\begin{adjustwidth*}{-\fullwidthlen}{0pt}%
 	\bibliography{\bibliographyfile}{}
-	\end{adjustwidth*}%
-\else\ifnum\bibliographymarginchoice=3 	
-	\bibliography{\bibliographyfile}{}
-\fi\fi\fi
-
-
+\end{adjustwidth*}%
+\fi
 \end{document}

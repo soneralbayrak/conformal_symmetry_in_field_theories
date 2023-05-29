@@ -1,1 +1,468 @@
-\chapter{Some technical details}
+\chapter{Mathematical Preliminaries}
+This appendix is a quick review of some parts of first chapter of \cite{vilenkin2012representation}.
+\section{The path from groups to algebras}
+Below, we will construct our way starting from groups via the path
+\begin{multline}
+\text{group }\to\text{ ring }\to\text{ skew field }\to\text{ field }\to\text{ linear space }\\\to\text{linear algebra}\to\text{Lie algebra}
+\end{multline}
+This perspective will help us realize how central groups play a role in mathematics as well as physics.
+\subsection{Group}
+\paragraph{Definition:} A set of elements $g_i \in G$ such that
+\begin{itemize}
+	\item $\exists$ a distinguished element $e$ such that $g*e=e*g=g,\; \forall g$
+	\item $\exists$ a mapping $g\to \hat g$ of G onto G such that $g*\hat g=\hat g*g=e$
+	\item operator $*$ is associative: $g_1*(g_2*g_3)=(g_1*g_2)*g_3$
+\end{itemize}
+$e$ and $\hat g$ are called identity and inverse respectively. In general, $\hat g$ is denoted as $g^{-1}$, and $a*b$ is denoted as $a b$.\footnote{For instance, $\C\backslash\{0\}$ (complex numbers except zero) form a group under multiplication with $1$ being the identity element; and, one uses the notation $ab$ and $a^{-1}$ for multiplication and inverse. Note that the notation persists beyond this domain for multiplication, although the numbers no longer necessarily form a group.} If $*$ is commutative, $a*b=b*a$ is usually denoted as $a+b=b+a$, and $\hat g$ denoted as $-g$. In this case $e$ is denoted as $0$.\footnote{For instance, $\C$ form a commutative group under addition with $0$ being the identity element; and, one uses the notation $a+b$ and $-a$ for addition and inverse. Like multiplication, this addition notation also persists beyond complex numbers even though they no longer necessarily form a group.}
+
+A few useful information:
+\begin{itemize}
+\item $\abs{G}$ is the order of the group, and is equal to the number of elements of $G$.\footnote{For instance, the commutative group $\Z_2$ consists of two elements: $e$ and $-e$, with the only nontrivial relation being $(-e)*(-e)=e$. We denote that as $\abs{\Z_2}=2$.}
+
+\item The set $S_n$ of all permutations of n elements is called the symmetric group.\footnote{For instance, $S_3$ has the elements $(123)$, $(132)$, $(231)$, $(213)$, $(312)$, and $(321)$ where $(ijk)$ denotes the permutation $\{1\to i, 2\to j, 3\to k\}$. Note that $(123)$ is the identity element, and $\abs{S_3}=6$. One can actually show that $\abs{S_n}=n!$.}
+
+\item In general, the collection of all transformations of a set $X$ (one to one mappings of $X$ onto itself) is a group.
+
+\item The additive group of the ring $\Z_n=\{0,1,\dots,n-1\}$ is the cyclic group of order $n$.\footnote{One calls the additive group of the ring $\Z$ (the set of integers) \emph{the infinite cyclic group}.}
+\end{itemize}
+
+\subsection{Ring $=$ Commutative group with multiplication}
+\paragraph{Definition:} The group $R$ is a ring if
+\begin{itemize}
+	\item $R$ is commutative,
+	\item group operation is addition,
+	\item multiplication is defined in $R$ with respect to addition:\footnote{In principle, the multiplication does not have to have any properties beyond its distributive property in \equref{eq: distributive property of multiplication in ring}. Its additional structure is used to label the ring, e.g. \emph{Commutative Ring}, \emph{Associative Ring}, and so on.}
+	\be 
+	\label{eq: distributive property of multiplication in ring}
+	a(b+c)=ab+ac\;,(b+c)a=ba+ca
+	\ee 
+\end{itemize}
+For instance, $\Z$ (and the set $n\Z$, integers divisible by $n$) are rings under arithmetical addition and multiplication. The set $\Z_n=\{0,1,\dots,n-1\}$ is a ring under addition and multiplication modulo $n$.\footnote{We will see that it is also a field if $n$ is a prime number.}
+
+\subsection{Skew field $=$ Ring whose multiplication is a group}
+A ring $\kappa$ is a skew field if the set $\kappa\backslash \{0\}$ is a group under multiplication!
+\subsection{Field $=$ Skew field whose multiplication is commutative}
+A ring $\kappa$ is a field if the set $\kappa\backslash \{0\}$ is a commutative group under multiplication!\footnote{$\R$, $\C$, and $\Z_n$ for $n$ prime are examples to a field.}
+	
+
+\subsection{Linear space $=$ A commutative group over a field}
+\paragraph{Definition:}$\cL$ is a linear space over $\kappa$ if
+\begin{itemize}
+	\item  $\cL$ is a commutative group
+	\item $\kappa$ is a field
+	\item For all $(\lambda,\vec{x})\in (\kappa,\cL)$, there is $\lambda \vec{x}\in \cL$
+	\item $\lambda(\vec{x}+\vec{y})=\lambda \vec{x}+\lambda \vec{y}$,\; $\lambda (\mu \vec{x})=\lambda \mu \vec{x}$,\; $(\lambda+\mu)\vec{x}=\lambda \vec{x}+\mu \vec{x}$
+	\item $1\vec{x}=\vec{x}$ where $1$ is the identity of $\kappa$
+\end{itemize}
+Elements of linear spaces are usually called \emph{vectors}. The set of vectors $x_1,\dots,x_n$ are called are \emph{linearly independent} if $\sum\limits_{m=1}^{n}\lambda_mx_m=0 \Rightarrow \lambda_{1,\dots,n}=0$ for $\lambda_m\in \kappa$.\footnote{
+The maximal number of linearly independent vectors of a linear space $\cL$ is called the \emph{dimension of $\cL$}. If we can find arbitrary many independent vectors, $\cL$ is infinite dimensional.
+}
+
+A set $\{e_\a\}$ of vectors forms a \emph{basis} of $\cL$ if for any $x\in \cL$ we have a unique linear combination $x=\lambda_\a e_\a$.\footnote{Any set of $n$ linearly independent vectors of $n-$dimensional linear space is a basis.}
+
+\paragraph{Example:} The set $\fM(m,n,\ka)$ of all $m\x n$ matrices from a field $\ka$ is a linear space over $\ka$ under element-wise addition and multiplication by field elements.\footnote{The dimension of this linear space is $m\x n$, with the matrices $e_{ij}=\delta_{ij}$ being a possible basis.}
+\subsection{Linear algebra $=$ A commutative ring over a field $=$ A linear space with multiplication among its elements}
+A linear space $\cL$ over a field $\ka$ is a linear algebra over $\ka$ if
+\begin{itemize}
+	\item There is element-wise multiplication of $\cL$, hence $\cL$ is a ring
+	\item $(\lambda x)y=x(\lambda y)=\lambda (xy)$
+\end{itemize}
+If the linear algebra is finite dimensional, then it is sufficient to give a product of its basis vectors
+\be 
+e_i e_j=\sum\limits_k c^k_{ij}e_k
+\ee 
+to define a multiplication in the algebra.\footnote{
+$c^k_{ij}$ are called \emph{structure constants} of the algebra $\cL$.
+}
+\paragraph{Examples:}
+\begin{itemize}
+	\item The space $\fM(n,\ka)$ of all $n\x n$ matrices over the field $\ka$ is a linear algebra under matrix multiplication.\footnote{It is an associative and non-commutative algebra, e.g. $(a_{ij}b_{jk})c_{kl}=a_{ij}(b_{jk}c_{kl})$  and $a_{ij}b_{jk}\ne b_{ij}a_{jk}$ for matrices $a,b,c$.} The identity element is $I_n\coloneqq\diag(1,\dots,1)$ and we can choose $e_{ij}=\de_{ij}$ as the basis.\footnote{Note that element-wise multiplication becomes $e_{ij}e_{km}=\delta_{jk}e_{im}$ in this basis, hence the structure constants are $c^{rs}_{ij,km}=\delta_{ir}\delta_{jk}\delta_{ms}$.}
+	
+	We can define a map from the linear algebra $\cL$ over the field $\ka$ to the underlying field $\ka$, i.e. $\cL\rightarrow\ka$. This map is called the determinant:
+	\be 
+	\det a=\sum (-1)^\a a_{1i_1}\cdots a_{ni_n}
+	\ee 
+	Here, the summation is over all permutations of $(1,\dots,n)$ and $\a$ is the inversions in a permutation.\footnote{An inversion in a permutation $(i_1,\dots i_n)$ of the numbers $(1,\dots,n)$ is a pair $(i_j,i_k)$ such that $j<k$ and $i_j>i_k$. If the number of inversions is even (odd), the permutation is said to be even (odd).} This map preserves the group structure, i.e. $ \det ab=\det a \x \det b$ for all $a,b\in \fM(n,\ka)$.
+
+	\item The group $\GL(n,\ka)$ is a special case of the linear algebra $\fM(n,\ka)$: it is the set of all non-singular\footnote{Matrices with nonzero determinants are called non-singular.} matrices of degree $n$ over a field $\ka$.\footnote{
+In general, the space $\fM(n,\ka)$ is an associative linear algebra: $n\x n$ matrices form a commutative group under addition and they have an associative multiplication among themselves. For non-singular matrices, the elements form a group under multiplication as well, hence $\GL(n,\ka)$.
+}
+	\item The skew field of quaternions over the field $\ka$, denoted by $\bH(\ka)$, is also a linear algebra.\footnote{It is a four dimensional linear space $\ka^4$ with an associative and linear multiplication.
+} The basis elements $\bm{e}_{0,1,2,3}$ satisfy:\footnote{One usually uses the shorthand notations $\bH\equiv \bH(\R)$ and $\a\bm{e}_0+\b\bm{e}_1+\g\bm{e}_2+\de\bm{e}_3=\a+\b \bm{i}+\g \bm{j}+\de \bm{k}$}
+\be 
+\bm{e}_0^2=-\bm{e}_i^2=\bm{e}_0\;,\quad \bm{e}_0\bm{e}_i=\bm{e}_i\;,\quad \bm{e}_i\bm{e}_j=(-1)^\a \bm{e}_k
+\ee 
+where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that every non-zero element are invertible in this algebra.
+\end{itemize}
+\subsection{Lie algebra $=$ A linear algebra whose element-wise multiplication is anticommutative}
+\begin{itemize}
+	\item A linear algebra $\cI$ over a field $\ka$ is a \emph{Lie algebra} if 
+	\begin{itemize}
+		\item Multiplication in $\cI$ is anticommutative. They are denoted as $\comm{X}{Y}=-\comm{Y}{X}$ and are called commutator.
+		\item Elements satisfy \emph{Jacobi identity}:
+		\be 
+		\comm{X}{\comm{Y}{Z}}+\comm{Y}{\comm{Z}{X}}+\comm{Z}{\comm{X}{Y}}=0
+		\ee 
+	\end{itemize}
+	\item The structure constants of a Lie algebra satisfy the identities
+	\be 
+	c_{ij}^k=-c_{ji}^k\;,\quad \sum\limits_{j} \left(c_{ij}^lc_{km}^j+c_{mj}^lc_{ik}^j+c_{kj}^lc_{mi}^j\right)=0
+	\ee 
+	Conversely, any algebra whose structure constants satisfy these conditions is a Lie algebra.
+	\item If we have $\comm{X}{Y}=0$ for any elements $X,Y$ of a Lie algebra $\cI$, then $\cI$ is said to be \emph{commutative}.
+	\item Examples:
+	\begin{itemize}
+		\item We can obtain a \emph{Lie algebra} from any algebra $\cL$ over a field $\ka$ by choosing $\comm{X}{Y}=XY-YX$, if multiplication of $\cL$ is associative. With this construction, $\cI$ has same elements with $\cL$.
+		\item A concrete example of above explanation: the set $\fM(n,\ka)$ is a Lie algebra over $\ka$. The commutation relations for its basis matrices $e_{ij}$ and the structure constants are given as
+		\be 
+		\comm{e_{ij}}{e_{km}}=\delta_{jk}e_{im}-\delta_{mi}e_{kj}\;,\quad c^{rs}_{ij,km}=\delta_{ir}\delta_{jk}\delta_{ms}-\delta_{kr}\delta_{im}\delta_{js}
+		\ee 
+		\item The set of vectors in a three-dimensional space is a Lie algebra under vector multiplication.
+	\end{itemize}
+\end{itemize}
+
+\section{Subgroups and subalgebras}
+\subsection{Subgroup}
+\subsubsection{Basics}
+\begin{itemize}
+	\item $H$ is subgroup of $G$ if
+	\begin{itemize}
+		\item $H$ is a nonempty set
+		\item $g_1g_2^{-1}\in H$ for all $g_1,g_2 \in H$
+	\end{itemize}
+	\item $H$ inherits the group operation of $G$.
+	\item A subgroup $N\subset G$ is said to be \emph{invariant} (or normal) if $gN=Ng$ for any $g\in G$. Here, $gN$ and $Ng$ denote cosets.\footnote{See \secref{\ref{sec:cosets}}.} Another way to look at this is as follows: $gNg^{-1}=N$, hence a general conjugation of an element of $N$ still leads to another element of $N$ if $N$ is a normal subgroup.
+	\item Intersections of two subgoups of $G$ is also a subgroup of $G$.
+	\item To any subgroup $H,K\subset G$, there is their \emph{commutator subgroup}, denoted by $\comm{H}{K}$, and generated by $hkh^{-1}k^{-1}$ for $h\in H$ and $k\in K$. The subgroup $\comm{G}{G}$ is called \emph{commutator subgroup} of $G$.
+	\item The intersection of all subgroups containing a given set $A\subset G$ is a subgroup of $G$, and is called the \emph{group generated by $A$}.
+\end{itemize}
+\subsubsection{Cosets}
+\label{sec:cosets}
+\begin{itemize}
+	\item For the subgroup $H\subset G$ and the elemeng $g_1\in G$, the sets $g_1 H$ ($Hg_1$) are left (right) cosets.
+	\item Left (right) cosets are either coincide or mutually distinct. Hence $G$ can be decompose into different $g_1H$ or $Hg_1$.
+	\item The set of left cosets is denoted as $G/H$ and is called \emph{left coset space} or \emph{left quotient space}.
+	\item The set of right cosets is denoted as $H\backslash G$ and is called \emph{right coset space} or \emph{right quotient space}.
+	\item For the subgroups $H,K\subset G$, $HgK$ is said to be a $(H,K)$ two-sided coset. Set of these cosets and is denoted as $H\backslash G/K$
+\end{itemize}
+\subsubsection{Centralizer \& Normalizer}
+\begin{itemize}
+	\item The collection $Z(A)$ is said to be the centralizer of $A$ if
+	\begin{itemize}
+		\item $A$ is a set of elements of a group $G$.
+		\item $Z(A)$ is the collection of all elements of $G$ which commute with every element of $A$.
+		\item Centralizer of $A\subset G$, $Z(A)$, is a subgroup of $G$.
+		\item Centralizer of $A\subset G$, $Z(A)$, coincides with the centralizer of the subgroup generated by $A$.
+		\item The centralizer of a group $G$ is said to be its \emph{center}, and denoted by $Z\equiv Z(G)$.
+	\end{itemize}
+	\item If $H$ is a subgroup of $G$, then the set of elements of $H$, which commute with every element of $A$, is said to be the \emph{centralizer} of $A$ in $H$.
+	\item The \emph{normalizer} of a subgroup $H'\subset G$ is collection of $g\in G$ such that $gH'=H'g$. In other words, the normalizer of a subgroup $H'\subset G$ is the maximal subgroup of $G$ in which $H'$ is an invariant subgroup.
+	\item If $H_{1,2}\subset G$ are two subgroups, one can define the normalizer of $H_1$ in $H_2$.
+\end{itemize}
+\subsubsection{Examples}
+\begin{itemize}
+	\item The additive groups $\bR$ of real numbers and $\bZ$ of integers are subgroups of the additive group $\bC$ of complex numbers.
+	\item The multiplicative groups $\bR_+$ of positive numbers and $\bT$ of numbers with absolute values equal to $1$ are subgroups of the multiplicative group $\bC\backslash\{0\}$ of complex numbers.
+	\item The collection of matrices $g\in \GL(n,\kappa)$ with $\det g=1$ forms an invariant subgroup of $\GL(n,\kappa)$, denoted as $\SL(n,\kappa)$:
+	\begin{itemize}
+		\item \textbf{The proof:} Let $\R^*$ be the multiplicative group of nonzero real numbers. Let 
+		\be 
+		\phi:\GL(n,\R)\rightarrow\R^*
+		\ee
+		be the map given by $\phi(X)=\det X$ for each $X\in\GL(n,\R)$. This map is well defined as $\det X\ne 0$ for $X\in\GL(n,\R)$. By the property of determinant, we know that \mbox{$\det XY=\det X \det Y$} hence $\phi$ is a group homomorphism. The kernel of $\phi$ is 
+		\be 
+		\ker(\phi)=\{X\in\GL(n,\R)|\phi(X)=\det X=1\}=\SL(n,R)
+		\ee 
+		and since kernels of group homomorphism's are always normal subgroups, we conclude $\SL(n,\R)$ is a normal subgroup of $\GL(n,\R)$.\footnote{See \url{http://mathworld.wolfram.com/GroupKernel.html}.}
+		\item Matrices $g$ with $\det g=1$ are called \emph{unimodular}.
+	\end{itemize}
+	\item The collection of parallel shifts of the plane is a subgroup of the group of the Euclidean motions of the plane.
+	\item The scalar matrices, $\lambda I_n$ with $\lambda \in \kappa$, consist the center of the group $\GL(n,\kappa)$.
+	\item The collection $\SL(n,\ka)$ of unimodular matrices is the commutator subgroup of $\GL(n,\ka)$.
+	\item The commutator subgroup of the group $S_\pm(n,\ka)$ of upper (lower) triangular $x\times n$ matrices coincides with the subgroup $N_\pm(n,\ka)$ of special triangular matrices, i.e. matrices with $1$'s on the main diagonal. 
+	\item Let $N_+^{(k)}(n,\ka)$ denote the subgroup of $N_+(n,\ka)$, where it consists of upper triangular matrices $n=(n_{ij})$ such that $n_{ij}=0$ for $0<j-i\le k$. Then, the commutator subgroup of $N_+(n,\ka)$ and $N_+^{(k)}(n,\ka)$ coincides with $N_+^{(k+1)}(n,\ka)$.
+	\item The center of the group $N_+(n,\ka)$ consists of the matrices of the form $I_n+\lambda e_{1n}$, where $\lambda \in \ka$.
+\end{itemize}
+
+\subsection{Subring, subfield, linear subspace, linear subalgebra}
+\subsubsection{Basics}
+\begin{itemize}
+	\item Subring, subfield, linear subspace, linear subalgebra are defined analogous to the subgroup.
+	\item \textbf{Ideal}: A subring $J$ of a ring $R$ is said to be left (right) ideal of $R$ if $rJ\subset J$ ($Jr\subset J$) for any $r\in R$. 
+	\item A subring which is simultaneously both left and right ideal is said to be an \emph{ideal} (or two-sided ideal).
+	\item One can analogously define left, right, and two-sided ideals of a linear algebra in the same way.
+	\item In analogy with subgroups, we can define \emph{subring, ideal, linear subspace, etc. generated by $A$} where $A$ is a given set such that $A\subset S$ for S being the ring, linear space, etc. (whatever the case is).
+	\item For linear subspaces $\cL_1$ and $\cL_2$ with $x\in\cL_1$ and $y\in\cL_2$, \emph{the linear subspace generated by the linear subspaces $\cL_1$ and $\cL_2$} consists of all the elements $x+y$. It is called the \emph{sum} of $\cL_1$ and $\cL_2$. 
+	\item In Lie algebras, every left ideal is also a right ideal, and vise versa. So all Lie algebra ideals are two-sided ideals.
+	\item In analogy with subgroups, we can define \emph{normalizer, centralizer, commutator subalgebra etc}:
+	\begin{itemize}
+		\item The \emph{centralizer} of a subset $A$ of a ring $R$ is the collection $Z(A)$ of elements of $R$ which commute with every element of $A$.
+		\item The \emph{normalizer} of a subring $S$ is the collection $N(S)$ of elements $r$ such that $Sr\subset S$ and $rS\subset S$. It is the largest subring of $R$ in which $S$ is an ideal.
+		\item If $\cI$ is a Lie algebra, then the centralizer of a subset $A$ consists of all elements $z$ such that $\comm{z}{a}=0$ for all $a\in A$. The centralizer of a Lie algebra $\cI$ is said to be its center. The Lie subalgebra $\comm{\cI_1}{\cI_2}$ generated by all elements of the form $\comm{x}{y}$, where $x\in \cI_1$ and $y\in \cI_2$, is said to be the \emph{commutator subalgebra} of Lie subalgebras $\cI_1$ and $\cI_2$.
+	\end{itemize}  
+\end{itemize}
+\subsubsection{Examples}
+\begin{itemize}
+	\item $\cL_1$ is a linear subspace of $\cL$ if
+	\begin{itemize}
+		\item $\cL$ is a linear space over a field $\kappa$
+		\item $\cL_1$ is also a linear space over the field $\kappa$
+		\item $\lambda x+\mu y\in \cL_1$ for $x,y\in \cL_1$ and $\lambda,\mu\in\kappa$
+	\end{itemize}
+	\item A linear subspace $\cL_1$ of a linear algebra $\cL$ is said to be a subalgebra in $\cL$ if the product of any elements of $\cL_1$ is again an element of $\cL_1$.
+	\item The field $\R$ is a subfield of $\C$.
+	\item The set $n\Z$ is an ideal of the ring $\Z$.
+	\item The collection of elements of the form $\lambda \bm{e}_0+0\bm{e}_1+0\bm{e}_2+0\bm{e}_3$ is the
+	center of the skew field $\bH(\ka)$ of quaternions. 
+	\item The Lie algebra $\mathfrak{n}_+(n, \ka)$ of upper triangular matrices with $0$'s on the main diagonal is the commutator subalgebra of the Lie algebra $\mathfrak{s}_+(n, \ka)$ of upper triangular matrices with commutation operation $\comm{a}{b}=ab-ba$.
+\end{itemize}
+
+\section{Homomorphisms and automorphisms}
+\subsection{In groups}
+\subsubsection{Basics}
+\begin{itemize}
+	\item A mapping $f$ of a group $G_1$ into a group $G_2$ is said to be a \emph{homomorphism} if for any $g, h \in G_1$ we have $f(gh) = f(g)f(h)$.
+	\item A one-to-one homomorphism of $G_1$ onto $G_2$ is called an \emph{isomorphism}: we say that groups $G_1$ and $G_2$ are isomorphic.
+	\item An isomorphism of a group
+	$G$ onto itself is called an \emph{automorhism} of $G$.
+	\item The image $f(H_1)$ of a subgroup $H_1\subset G_1$ under a homomorphic mapping
+	$f:G_1\rightarrow G_2$ is a subgroup of $G_2$, and the full inverse image $f^{-1}(H_2)$ of a subgroup $H_2 \subset G_2$ is a subgroup of $G_1$.
+	\item $N=f^{-1}(e')$, where $e'$ is the identity element of $G_2$, is an invariant subgroup of $G_1$, called a \emph{kernel} of the homomorphism $f$.
+	\item The subgroup $f(G_1)\subset G_2$
+	is isomorphic to the quotient group $G_1/N$, i.e. to the
+	coset space $G_1/N$ with multiplication of cosets defined by the equality $g_1N*g_2N = g_1g_2N$.
+	\item Inner automorphism:
+	\begin{itemize}
+		\item The mapping $g\rightarrow g_0gg_0^{-1}$ is an automorphism of $G$. These automorphisms are called \emph{inner}.
+		\item The element of $G$, which is the image of an element $g$ under an inner automorphism, is called \emph{conjugate} with $g$.
+		\item The group $G$ decomposes into classes of mutually conjugate elements, and one of these classes is the set $\{e\}$.
+	\end{itemize}
+\end{itemize}
+\subsubsection{Representation of a group}
+\begin{itemize}
+	\item A homomorphic mapping of a group $G$ into the group of transformations of
+	a set $X$ is called a \emph{representation} of the group by transformations of $X$. This mapping defines the \emph{action} of the group $G$ on $X$.
+	\item The image of $x\in X$ under the transformation corresponding to $g\in G$ is denoted by $g\circ x$. So, for all $g_1,g_2 \in G$
+	and for all $x \in X$ one has the equality $(g_1g_2)\circ x=g_1\circ (g_2\circ x)$.
+	\item The set $X$, on which the action of $G$ is defined, is called the \emph{G-set} or the \emph{G-space}.
+	\item Actions of a group $G$ on sets $X$ and $Y$ are said to be \emph{equivalent} if there exists a one-to-one correspondence $f:X\rightarrow Y$ such that $g\circ(f(x))=f(g\circ x)$ for all $x\in X$, $g\in G$.
+	\item The set $N$ of elements of $G$, to which there corresponds the identity transformation in $X$, is an invariant subgroup of $G$, called the \emph{kernel of ineffectiveness} of the action of $G$ on $X$. If $N = \{e\}$, where $e$ is the identity element of $G$, then $G$ is said to act effectively on $X$.
+	\item Let us denote by $Y^X$ the space of mappings of a set $X$ into a set $Y$.
+	\begin{itemize}
+		\item  If $X$ is a $G-$set, then the action of $G$ in $Y^X$ is defined by the equality $$(g\circ f)(x)=f(g^{-1}\circ x)\equiv f_g(x)$$
+		\item If $Y$ is a $G-$set, then the action of $G$ in $Y^X$ is given by the equality $$(g\circ f)(x)=g\circ f(x)$$
+	\end{itemize}
+	Note that the equation in the first case is well-defined: $$(g_1g_2\circ f)(x)=f((g_1g_2)^{-1}\circ x)=f(g_2^{-1}g_1^{-1}\circ x)=f_{g_2}(g_1^{-1}\circ x)=(g_1\circ f_{g_2})(x)=(g_1\circ (g_2\circ f))(x)$$
+	
+\end{itemize}
+\subsubsection{Examples}
+\begin{itemize}
+	\item Let $\bR$ be the additive group of real numbers, and $\bR^+$ be the multiplicative group of all positive real numbers. Since $a^{x+t}=a^xa^y$, then for given $a \ne 1$, $a>0$, the mapping $x\rightarrow a^x$ provides an isomorphism between $\bR$ and $\bR^+$.
+	\item The mapping $x\rightarrow e^{2\pi ix}$ of the additive group $\bR$ onto the multiplicative group $\bT$ is homomorphic. Its kernel coincides with the additive group $\bZ$ of integers.
+	\item The quotient group $\bZ/n\bZ$ is isomorphic to $\bZ_n$.
+	\item The mapping $g\rightarrow\det g$ is a homomorphism of $\GL(n,\ka)$ onto $\ka\backslash\{0\}$.
+	\item The matrix $b = (b_{ij})$ with $b_{ij}=a_{ji}$
+	is said to be the transpose of the
+	matrix $a = (a_{ij})$, it is denoted by $a^t$. It is evident that $(\lambda a+\mu b)^t=\lambda a ^t+\mu b^t$, $(a^{-1})^t=(a^t)^{-1}$, and $(ab)^t=b^ta^t$. The mapping $a\rightarrow (a^{-1})^t$ is an automorphism of the group $\GL(n,\ka)$.
+	\item The left shifts $g\rightarrow g_0g$ and the right shifts $g\rightarrow g g_0^{-1}$ define equivalent
+	effective actions of $G$ on $G$. The equivalence is given by the mapping $g\rightarrow g^{-1}$.
+	\item The transformations $g\rightarrow g_0gg_0^{-1}$ define the action of $G$ on $G$ with the kernel of
+	ineffectiveness coinciding with the center $Z$ of $G$.
+	\item Any matrix from $\GL(n, \C)$ with simple eigenvalues is conjugate to a diagonal matrix.
+\end{itemize}
+\subsection{In rings, fields, linear spaces, and algebras}
+\subsubsection{Basics}
+\begin{itemize}
+	\item Homomorphisms of linear spaces are called \emph{linear mappings}. In other words, a mapping $A:\fL_1\to \fL_2$ of a linear space $\fL_1$ over a field $\ka$ into a linear space $\fL_2$ over the same field is linear if for any $\lambda,\mu\in\ka$ and for any $x,y\in\fL_1$ one has the equality $A(\lambda \bx+\mu \by)=\lambda A\bx+\mu A\by$.
+	\item To every subspace $\fM_1\subset\fL_1$ there corresponds the set of linear mappings $A:\fL_1\to \fL_2$ such that $A(\fM_1) = 0$, and to every subspace $\fM_2\subset\fL_2$ there corresponds the set of linear mappings $A:\fL_1\to \fL_2$ such that $A(\fL_1)\subset\fM_2$ 
+	\item The complete inverse image $A^{-1}(0)$ of the null vector from $\fL_2$ is called the \emph{kernel} of the linear mapping $A:\fL_1\to \fL_2$. It is a linear subspace in $\fL_1$. The image $A(\fL_1)$ of the space $\fL_1$ under this mapping is a linear subspace in $\fL_2$.
+	\item The linear mapping $A: \fL_1\to\fL_2$ for which $A^{-1}(0) = 0$ and $A(\fL_1) = \fL_2$ is invertible, i.e. there is the linear mapping $A^{-1}: \fL_2\to\fL_1$ such that
+	$A^{-1}A = E_1$ ($E_k$ is the identity mapping in $\fL_k$, $k = 1,2$). In this case we also have $AA^{-1}= E_2$.
+	\item If linear mappings $A$ and $B$ of a space $\fL$ into itself are invertible, then
+	the composition $AB$ is also invertible and $(AB)^{-1} = B^{-1}A^{-1}$.
+	\item The set of invertible linear mappings of an $n-$dimensional linear space $\fL$ over a field $\ka$ is a group which is isomorphic to the group $\GL(n, \ka)$ of non-singular matrices of order $n$ over the field $\ka$, and so it is also denoted by $\GL(n, \ka)$.
+	\item The set of linear mappings of $\fL_1$ into $\fL_2$ is a linear space over $\ka$: $(\lambda A+\mu B)\bx=\lambda A\bx+\mu B\bx$, $\bx\in\fL_1$. In particular, the space of linear mappings of a linear space $\fL$ into $\ka$
+	(i.e. the space of functions $f$ on $\fL$ with values in $\ka$ satisfying the relation
+	$f(\lambda \bx+\mu\by) = \lambda f(\bx)+\mu f(\by)$ is linear. These functions are called \emph{linear functionals} or \emph{linear forms} on $\fL$.
+	\item The linear space consisting of linear functionals on $\fL$ is called \emph{conjugate} (or \emph{dual}) to $\fL$ and is denoted by $\fL'$.
+	\item To every linear operator $A:\fL\to\fM$ there corresponds the conjugate linear operator $A':\fM'\to\fL'$, defined by the equality $(A'f)(\bx)=f(A\bx)$, $\bx\in\fL$, $f\in\fM'$.
+	\item A finite dimensional linear space $\fL$ is isomorphic to its conjugate space $\fL'$. The following equalities hold: 
+	$$(\lambda A+\mu B)'=\lambda A'+\mu B'\;,\quad (A^{-1})'=(A')^{-1}\;,\quad (AB)'=B'A'$$
+\end{itemize}
+
+\chapter{A brief review of distributions}
+In this appendix, we briefly review the concept of distributions and present some of their properties.\footnote{For a rather pedagogical introduction, we refer the reader to \cite{strichartz2003guide}.}
+
+\section{Basics}
+
+Let $\O$ be an open subset of $\R^n$. We then denote by $\cD(\O)$ the space of functions that vanish outside the bounded subset of $\O$ and whose all order partial derivatives are continuous.\footnote{In other words, $\cD(\O)$ is the algebra of $C^\infty-$functions with compact support on $\O$.} Such objects are also called \emph{test functions};\footnote{
+	For example,
+	\be 
+	\f(x)=\left\{\begin{aligned}
+		\exp(-x^{-2}-(1-x)^{-2})&\qquad1>x>0\\
+		0&\qquad\text{otherwise}
+	\end{aligned}\right.
+	\ee 
+	is a such a test function on $\O=\R$.
+} if $\f(x)$ is such a function and if \mbox{$\int f(x)\f(x)dx$} exists, then we call $f(x)$ \emph{a generalized function}. These integrals can also be viewed as an operation of \emph{a linear functional} $f$ on the test function $\f$ and denoted as $\<f,\f\>$. We denote the space of all continuous linear functionals on $\cD(\O)$ by $\cD'(\O)$ and call these functionals \emph{distributions}.\footnote{
+	As an example, the function $f(x)=\abs{x}^{-n+k}$ for $k>0$ gives rise to a distribution in $\cD'(\Omega)$ for $\Omega\in\R^n$ by setting
+	\be 
+	\<f,\f\>=\int_\O \f(x)\abs{x}^{-n+k}d^nx
+	\ee 
+	because the integration is convergent for all test functions.
+}
+
+We constructed a functional $f$ from the function $f(x)$ by identifying $\<f,\f\>$ and $\int f(x)\f(x)dx$ but not all functionals in $\cD'(\O)$ can be constructed this way.\footnote{For instance, there does not exist a mathematically rigorous Dirac-Delta function $\de(x)$ to construct the Dirac-Delta distribution $\de$; what physicists denote as $\de(x)$ is a somewhat sloppy reference to the actual distribution $\de$. As we will see below, the correct way to define $\de(x)$ is to take a limit of a sequence of test functions $\de_n(x)$.} Furthermore, even if a functional is constructed this way, the properties of the function $f(x)$ do not carry over to the distribution $f$ unless the function is \emph{locally integrable}, i.e. unless $\int_\O f(x)\f(x)dx$ is absolutely convergent for all $\f\in\cD(\O)$.\footnote{For example, $f(x)=1/\abs{x}$ on $\R$ is not locally integrable, hence its properties do not necessarily carry over to the distribution $f$ defined as $\<f,\f\>=\int \f(x)/\abs{x} dx$. Indeed, even though $f(x)$ is a non-negative function, $f$ is \emph{not a non-negative distribution}, i.e. $\<f,\f\>$ can be negative even if the test function satisfies $\f(x)\ge 0$.} However, we actually do have another method to construct any distribution out of test functions:
+\begin{center}
+	\itshape Given any distribution $f\in\cD'(\O)$, there exists a sequence $\{\f_n\}$ of test functions such that $\f_n\rightarrow f$ as distributions.
+\end{center} 
+This definition of a distribution allows us to carry over usual operations on functions to distributions. Indeed, we can \emph{define} $T\.f$ as $T\.f=\lim\limits_{n\rightarrow\infty}T\.\f_n$ if $f=\lim\limits_{n\rightarrow\infty}\f_n$.\footnote{This requires the limit $\lim\limits_{n\rightarrow\infty}T\.\f_n$ to be independent of the choice of the sequence $\{\f_n\}$  approximating $f$, which is true for most interesting operations such as translation or differentiation.}
+
+The theorem above is quite useful to represent distributions in terms of test functions, however the test functions in $\cD(\O)$ can be limited as they have to have bounded support. Indeed, a common function in Physics is the Gaussian $f(x)=e^{-\abs{x}^2}$, which checks out to be a $C^\infty$ function but fails to have a compact support (is nonzero for all $x\in\R^n$). Such functions belong to \emph{the Schwartz class} $\cS(\R^n)$, which is the algebra of smooth functions vanishing at infinity faster than any power of $\abs{x}^{-1}$, together with all derivatives. These functions are particularly important for Fourier transform because if $f\in\cS(\R^n)$ and $g$ is the Fourier transform of $f$, then $g\in\cS(\R^n)$ as well.
+
+
+We denote the space of all continuous linear functionals on $\cS(\R^n)$ by $\cS'(\R^n)$ and call these functionals \emph{tempered distributions}. As $\cD(\R^n)\subset\cS(\R^n)$, and as any $f$ in $\cS'(\R^n)$ is a functional $\<f,\f\>$ defined for all $\f\in\cS(\R^n)$, tempered distributions form a subclass of distributions. In particular, Fourier transform of a tempered distribution is also a tempered distribution.
+
+The Dirac-$\de$ distribution is a tempered distribution and hence can be constructed as a limiting sequence of Schwartz functions; indeed, we can define it as
+\be 
+\<\de,\f\>=\lim\limits_{\e\rightarrow 0}\frac{1}{\sqrt{\pi}\abs{\e}}\int\limits_{-\infty}^{\infty}e^{-(x/\e)^2}\f(x)dx
+\ee 
+where $\de_\e(x)\equiv\frac{1}{\sqrt{\pi}\abs{\e}}e^{-(x/\e)^2}$ is the Schwartz function whose sequence limits to the $\de$ distribution. As an abusive notation, it is common to write $\de(x)$ and call it a $\de$-function, despite such a function does not really exist. Indeed, it should be understood that $\de(x)$ is only a shorthand notation such that
+\be 
+\int\de(x)\f(x)dx\equiv\lim\limits_{\e\rightarrow0}\int\de_\e(x)\f(x)dx
+\ee 
+
+It can be explicitly checked through its definition that Dirac-$\de$ distribution has the action $\<\de,\f\>=\f(0)$. By using the adjoint identities we can derive related actions, e.g. $\<\de',\f\>=-\f'(0)$.\footnote{Adjoint identities in distribution theory are relations of the form $\int T\psi(x)\f(x)dx=\int \psi(x)S\f(x)dx$, where one tries to find the operation $S$ for a given operation $T$. In the case of derivatives, it is straightforward to find that $S=-\partial$ for $T=\partial$ via integration by parts, leading to $\<\de',\f\>=-\f'(0)$.} Likewise,
+by using its definition as a limit of $\de_\e(x)$, one can work out the action of tensor products of $\de-$distributions (i.e. $\de(x)\de(y)$), though ordinary products (i.e. $\de^2(x)$) are not really defined in $\cD'(\R^n)$.\footnote{\label{footnote: products of distributions}
+	The limit of $\left[\de_\e(x)\right]^2$ does not converge in $\cD'(\R)$ for real-valued $\de_\e(x)$. For complex-valued sequences, the expression does converge however contains ambiguities; for instance, one can show that the action of the distributions $\de^2$ and $c_1\de+c_2\de'$can be made equivalent for arbitrary complex coefficients $c_i$. This rather indicates that we should not attempt to define $\de^2$ as an element of the space of distributions \cite{michael1992multiplication}.
+}
+
+A related distribution to the Dirac$-\de$ is $\de_\pm\in\cD'(\R)$, defined as
+\be 
+\<\de_\pm,\f\>=\lim\limits_{\e\rightarrow0}\int\frac{1}{x\pm i\e}\f(x)dx
+\ee 
+which is related to $\de-$distribution by the relation
+\be 
+\label{eq: relation between delta and delta plusminus}
+\lim\limits_{\e\rightarrow0}\int\frac{1}{x\pm i\e}\f(x)dx=\int \left(\pv\frac{1}{x}\right)\f(x)dx\mp i\pi \lim\limits_{\e\rightarrow0}\int\de_\e(x)\f(x)dx
+\ee 
+where the \emph{principle value} of $1/x$ can be defined as $\pv\frac{1}{x}=\partial_x\log\abs{x}$. With an abuse of notation, we can simply write
+\be 
+\label{eq: relation between delta and delta pm}
+\de_\pm(x)=\pv\frac{1}{x}\mp i\pi\de(x)
+\ee 
+as well. However, we should be careful while writing distributions as if they are functions as in \eqref{eq: relation between delta and delta pm}: $\cD'(\R)$ cannot be imbedded in an associative differential algebra meaning that not only products of distributions can be ill-defined (see footnote~\ref{footnote: products of distributions}) but also products of one distribution with ordinary function needs to be treated with care as well!\footnote{
+	For instance, the product can be non-commutative. As an example, note that the relations 
+	\be 
+	\cR=\{\de(x)\.1=\de(x),\; \de(x)\.x=0,\;x\.\pv\frac{1}{x}=1\}
+	\ee 
+	indicate that
+	\be 
+	\left(\de(x)\.x\right)\.\pv\frac{1}{x}\ne\de(x)\.\left(x\.\pv\frac{1}{x}\right)
+	\ee 
+	Ultimately,	$\cR$ needs to change if one imbeds $\cD'(\R)$ to an associative algebra $\cA$; in fact, in such an imbedding, either the derivatives or the product of continuous functions cannot be preserved due to the famous \emph{impossibility result} of L. Schwartz \cite{michael1992multiplication}.
+}
+
+\section{More on intrinsic products of distributions}
+As we discussed above, it is not possible to define the multiplication of distributions while preserving generality; nevertheless, there are ways to do this for specific tempered distributions. An important category is when the distribution can be represented as the boundary value of a holomorphic function on $\C\backslash\R$ with support in the upper half plane: in this case, one just multiplies the holomorphic representatives and takes the boundary value of the product. As an example, consider $\de_+(x)$: this can be viewed as the boundary value of the function $\hat\de_+(z)$ defined as
+\be 
+\hat\de_+(z)=\left\{\begin{aligned}
+	1/z&\quad \Im{z}>0\\
+	0&\quad \Im{z}<0
+\end{aligned}\right.
+\ee 
+Thus, we can write $\de_+(x)\de_+(x)$ as the boundary value of $\hat\de_+(z)\hat\de_+(z)$:
+\be 
+\label{eq: square of delta plus}
+\left[\de_+(x)\right]^2=\lim\limits_{\e\rightarrow0}\frac{1}{(x+i\e)^2}
+\ee 
+where we realize that this indicates $\left[\de_+(x)\right]^2=-\partial_x\de_+(x)$, meaning that its action can be written as $\<\de_+^2,\f\>=\<\de_+,\f'\>$.
+
+This category of distributions is actually quite important for relativistic theories such as Lorentzian quantum field theory. In the rigorous way of deriving things, one starts in the Euclidean region (with operators taking functional values) and then does the Wick rotation, effectively moving the complex time $x^0$ from upper half-plane ($it$) to the real-line ($t$). This operation moves the operators to the boundary of their holomorphic domain, turning them into distributions. In particular, all Weightman functions become tempered distributions, as required by his temperedness axiom.\footnote{
+	A precise discussion of this is given in \cite{Streater:1989vi} and \cite{Jost:1965yxu}. A heuristic discussion of the argument can be found in \cite{Haag:1992hx}, see also the relatively recent review \cite{Hartman:2015lfa} for a nice introduction.
+} 
+
+This approach has been generalized to turn the span of some distributions into an associative commutative differential algebra. Importantly, define the distribution
+\be 
+\label{eq: generalized principle value}
+\pv x^{-m}\equiv\frac{(-1)^{m-1}}{(m-1)!}\frac{d^m}{dx^m}\log\abs{x}
+\ee 
+which is the generalization of the principle value of $1/x$ to higher powers $-m\in\N$. It has been shown in \cite{ivanov1979} that we can consistently define an algebra with the multiplication table
+\be 
+\pv x^{-m}\.\pv x^{-n}=&\pv x^{-m-n}\\
+\de^{(m)}(x)\.\de^{(n)}(x)=&0\\
+\pv x^{-m}\.\de^{(n-1)}(x)=&(-1)^m\frac{n!}{(m+n)!}\de^{(m+n-1)}(x)
+\ee 
+where $\de^{(m)}(x)$ represents the $m-$th derivative of delta distribution. We can check the consistency of this multiplication with \eqref{eq: square of delta plus}:
+\be 
+\left[\de_+(x)\right]^2=&\pv x^{-1}\.\pv x^{-1}-2i\pi\pv x^{-1}\.\de(x)+(-i\pi)^2\de(x)\.\de(x)
+\\
+=&\pv x^{-2}+i\pi\de^{(1)}(x)+0
+\\
+=&-\partial_x\left(\pv x^{-1}-i\pi\de(x)\right)
+\\
+=&-\partial_x\de_+(x)
+\ee
+which is indeed what we found by extending $\de_+(x)$ to $\hat\de_+(z)$.
+
+\section{Subtleties with tensor products of distributions}
+Compared to intrinsic products of distributions such as $\de(x)^2$, tensor products of distributions such as $\de(x)\de(y)$ are milder: we can define them in various ways, such as \emph{Fourier products}, \emph{strict products}, and \emph{model products} \cite{michael1992multiplication}. Nevertheless, they can also behave unexpectedly; indeed, we will reproduce below the discussion in \S18 of the latter reference, where it is shown that direct use of such products with differential equations can give incorrect results.
+
+We will illustrate this with a concrete example. Consider the system of partial differential equations:\footnote{This is an example of a semilinear hyperbolic system (which are used to model advection and nonlinear interaction). This particular model is also called \emph{the migrating predator-prey model}: it models two species moving along the $x-$axis with speeds $\pm 1$ and interacting upon collision. The system is interesting as it describes strong interaction, i.e. its solution does not split into a regular and a singular piece.}
+\be
+\label{eq: system of equations} 
+(\partial_t+\partial_x)u_1=&u_1 u_2\\
+(\partial_t-\partial_x)u_2=&-u_1 u_2\\
+u_j(x,0)=&a_j(x),\;\;j=1,2
+\ee
+Given arbitrarily large \& nonnegative initial data, the existence and uniqueness of a generalized solution to this system in the Colombeau algebra $G(\R^2)$ has been established. For $a_1(x)=\a_1\de(x+1)$ and $a_2(x)=\a_2\de(x-1)$, the solutions $u_i$ converge to the distributions $v_i$ that read as
+\begin{subequations}
+	\label{eq: solution to hyperbolic example}
+	\be 
+	v_1=&\a_1\de_1+(\a_2-\b)\theta_1\;,\\ v_2=&\a_2\de_2-(\a_2-\b)\theta_2
+	\ee 
+	with
+	\be 
+	\b=-2\log\left(1-\exp(-\frac{\a_1}{2})+\exp(-\frac{\a_1+\a_2}{2})\right)
+	\ee 
+\end{subequations}
+where we use the shorthand notation
+\be 
+\de_1(x,t)=&\de(x-t+1)\;,&\quad \de_2(x,t)=&\de(x+t-1)\\ \theta_1(x,t)=&\de(x-t+1)\otimes H(t-1)\;,&\quad \theta_2(x,t)=&\de(x+t-1)\otimes H(t-1)
+\ee 
+for the Heaviside distribution $H$.
+
+This solution has been obtained by \emph{regularizing the products of distributions} and then taking the appropriate limit. We will show below that a naive tensor multiplication of distributions actually gives an incorrect result.
+
+From a physical standpoint, it is obvious that two delta waves propagate along lightcone coordinates, interact at $t=1$, and then scatter with different amplitudes. Indeed, we can see that this is the case from the actual solution in \eqref{eq: solution to hyperbolic example}. So even if we did not have the solution, it would have made sense to propose an ansatz of the form
+\be 
+\label{eq: ui in terms of delta functions}
+u_1=\a_1\left(\de_1+c_1\theta_1\right)\\
+u_2=\a_2\left(\de_2+c_2\theta_2\right)
+\ee 
+for coefficients $c_i$ to be determined. Once we insert these into the system of equations, we are forced to evaluate tensor products of delta distributions: but these are well defined,\footnote{
+	$\de_1\de_2$, $\de_i\theta_j$, and $\theta_1\theta_2$ exist as Fourier product, as strict product, and as model product with rotationally symmetric mollifiers employed, respectively. They read as
+	\bea[eq: product of delta]
+	\de_1\de_2=&\half\de(x)\de(t-1)\;,\\ \de_1\theta_2=\de_2\theta_1=&\frac{1}{4}\de(x)\de(t-1)\;,\\\theta_1\theta_2=&\frac{1}{8}\de(x)\de(t-1)
+	\eea
+}
+thus \eqref{eq: system of equations} become
+\be 
+\a_1c_1\de(x)\de(t-1)=&\a_1\a_2\left(\half+\frac{c_1+c_2}{4}+\frac{c_1c_2}{8}\right)\de(x)\de(t-1)
+\\
+\a_2c_2\de(x)\de(t-1)=&-\a_1\a_2\left(\half+\frac{c_1+c_2}{4}+\frac{c_1c_2}{8}\right)\de(x)\de(t-1)
+\ee 
+This gives us a system of algebraic equations, and with the condition $c_i\ge -1$ and $\a_i\ge 0$ (so that $u_i$ have nonnegative coefficients), we obtain the unique solution
+\begin{subequations}
+	\label{eq: solution to hyperbolic example 2}
+	\be 
+	v_1=&\a_1\de_1+(\a_2-\b')\theta_1\;,\\ v_2=&\a_2\de_2-(\a_2-\b')\theta_2
+	\ee 
+	with
+	\be 
+	\b'=\a_1+4-\sqrt{(\a_1+4)^2+2\a_2(\a_1-4)+\a_2^2}
+	\ee 
+\end{subequations}
+Clearly this does not match the correct answer in \eqref{eq: solution to hyperbolic example}!\footnote{It is interesting to note that $\b'\simeq\b+\cO(\mu^3)$ if $\a_1\sim\a_2\sim\mu$.}
+
+This example illustrates why one needs to exercise care even for tensor products of distributions, in the context of differential equations at the very least. The root of the problem here is that terms such as $\de(x)\de(y)$ represent limits of sequences, and that the derivatives do not necessarily commute with this limit: in the correct approach, one solves the system of equations with sequences, and take the limit \emph{only after that}. Nevertheless, it is depressing to observe that the incorrect approach has yielded a self-consistent result, without any indication for a problem along the way, and that the incorrect result matches the correct one in the first few orders of $\a_i$.

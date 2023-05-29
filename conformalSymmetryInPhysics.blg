@@ -5,79 +5,79 @@ Reallocating 'name_of_file' (item size: 1) to 15 items.
 The style file: utphysModified.bst
 Reallocating 'name_of_file' (item size: 1) to 27 items.
 Database file #1: collectiveReferenceLibrary.bib
-Repeated entry---line 7498 of file collectiveReferenceLibrary.bib
+Repeated entry---line 7509 of file collectiveReferenceLibrary.bib
  : @article{Kologlu:2019mfz
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 7561 of file collectiveReferenceLibrary.bib
+Repeated entry---line 7572 of file collectiveReferenceLibrary.bib
  : @article{Kravchuk:2018htv
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 9947 of file collectiveReferenceLibrary.bib
+Repeated entry---line 9958 of file collectiveReferenceLibrary.bib
  : @article{Chester:2019ifh
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 10160 of file collectiveReferenceLibrary.bib
+Repeated entry---line 10171 of file collectiveReferenceLibrary.bib
  : @article{Kos:2014bka
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 30913 of file collectiveReferenceLibrary.bib
+Repeated entry---line 30924 of file collectiveReferenceLibrary.bib
  : @article{Arkani-Hamed:2018kmz
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 48314 of file collectiveReferenceLibrary.bib
+Repeated entry---line 48325 of file collectiveReferenceLibrary.bib
  : @article{Baumann:2018muz
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 48365 of file collectiveReferenceLibrary.bib
+Repeated entry---line 48376 of file collectiveReferenceLibrary.bib
  : @article{Baumann:2019ghk
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 48389 of file collectiveReferenceLibrary.bib
+Repeated entry---line 48400 of file collectiveReferenceLibrary.bib
  : @article{Baumann:2019oyu
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 48415 of file collectiveReferenceLibrary.bib
+Repeated entry---line 48426 of file collectiveReferenceLibrary.bib
  : @article{Baumann:2020dch
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 48427 of file collectiveReferenceLibrary.bib
+Repeated entry---line 48438 of file collectiveReferenceLibrary.bib
  : @article{Baumann:2020ksv
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 87664 of file collectiveReferenceLibrary.bib
+Repeated entry---line 87675 of file collectiveReferenceLibrary.bib
  : @article{Chester:2019ifh
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 96178 of file collectiveReferenceLibrary.bib
+Repeated entry---line 96189 of file collectiveReferenceLibrary.bib
  : @article{Costa:2011mg
  :                      ,
 I'm skipping whatever remains of this entry
-Unbalanced braces---line 166254 of file collectiveReferenceLibrary.bib
+Unbalanced braces---line 166265 of file collectiveReferenceLibrary.bib
  :     title = "{Homogeneous Yang-Baxter deformations as non-abelian duals of the $\mathrm[AdS}_5 \sigma$-model
  :                                                                                                             }",
 I'm skipping whatever remains of this entry
-Repeated entry---line 182869 of file collectiveReferenceLibrary.bib
+Repeated entry---line 182880 of file collectiveReferenceLibrary.bib
  : @article{Karateev:2019pvw
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 191047 of file collectiveReferenceLibrary.bib
+Repeated entry---line 191058 of file collectiveReferenceLibrary.bib
  : @article{Kologlu:2019mfz
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 192172 of file collectiveReferenceLibrary.bib
+Repeated entry---line 192183 of file collectiveReferenceLibrary.bib
  : @article{Kos:2014bka
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 193762 of file collectiveReferenceLibrary.bib
+Repeated entry---line 193773 of file collectiveReferenceLibrary.bib
  : @article{Kravchuk:2018htv
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 263702 of file collectiveReferenceLibrary.bib
+Repeated entry---line 263713 of file collectiveReferenceLibrary.bib
  : @article{Simmons-Duffin:2012juh
  :                                ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 263732 of file collectiveReferenceLibrary.bib
+Repeated entry---line 263743 of file collectiveReferenceLibrary.bib
  : @inproceedings{Simmons-Duffin:2016gjk
  :                                      ,
 I'm skipping whatever remains of this entry
@@ -370,45 +370,79 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry Kastrup:1966zzc
 while executing---line 1260 of file utphysModified.bst
-You've used 73 entries,
+ptr=1, stack=
+
+---the literal stack isn't empty for entry vilenkin2012representation
+while executing---line 1260 of file utphysModified.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry strichartz2003guide
+while executing---line 1260 of file utphysModified.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry michael1992multiplication
+while executing---line 1260 of file utphysModified.bst
+Warning--empty publisher in Streater:1989vi
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Streater:1989vi
+while executing---line 1260 of file utphysModified.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Jost:1965yxu
+while executing---line 1260 of file utphysModified.bst
+Warning--empty publisher in Haag:1992hx
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Haag:1992hx
+while executing---line 1260 of file utphysModified.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Hartman:2015lfa
+while executing---line 1260 of file utphysModified.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry ivanov1979
+while executing---line 1260 of file utphysModified.bst
+You've used 81 entries,
             2353 wiz_defined-function locations,
-            1144 strings with 17281 characters,
-and the built_in function-call counts, 20915 in all, are:
-= -- 2184
-> -- 655
+            1195 strings with 18649 characters,
+and the built_in function-call counts, 22763 in all, are:
+= -- 2394
+> -- 702
 < -- 0
-+ -- 251
-- -- 178
-* -- 1614
-:= -- 2501
-add.period$ -- 92
-call.type$ -- 73
-change.case$ -- 9
++ -- 271
+- -- 190
+* -- 1709
+:= -- 2727
+add.period$ -- 113
+call.type$ -- 81
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 1144
-empty$ -- 2008
-format.name$ -- 178
-if$ -- 5445
+cite$ -- 88
+duplicate$ -- 1263
+empty$ -- 2235
+format.name$ -- 190
+if$ -- 5950
 int.to.chr$ -- 0
-int.to.str$ -- 73
-missing$ -- 261
-newline$ -- 236
-num.names$ -- 75
-pop$ -- 391
+int.to.str$ -- 81
+missing$ -- 281
+newline$ -- 269
+num.names$ -- 83
+pop$ -- 456
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 854
+skip$ -- 899
 stack$ -- 0
-substring$ -- 1236
-swap$ -- 603
+substring$ -- 1270
+swap$ -- 627
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 5
-while$ -- 201
-width$ -- 75
-write$ -- 491
-(There were 90 error messages)
+warning$ -- 7
+while$ -- 212
+width$ -- 83
+write$ -- 567
+(There were 98 error messages)
