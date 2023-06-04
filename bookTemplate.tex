@@ -42,6 +42,9 @@
 \usepackage[oldstyle]{libertine}
 \usepackage{libertinust1math}
 %
+%%% NUMBERING OPTIONS
+\setsecnumdepth{subsection}
+%
 %%% SET PAPER SIZE
 \setstocksize{297mm}{210mm} %A4 paper
 \settrims{18mm}{18mm} % we trim 18mm from every direction. We chose this value at the very end, once we established the lengths of text block and side margin
@@ -465,6 +468,7 @@
 \end{abstract}
 \end{adjustwidth*}
 \end{titlingpage}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 \frontmatter
 \input{frontmatter}
 \beginfullwidth
@@ -478,6 +482,7 @@
 \mainmatter
 \input{mainmatter}
 \appendix 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \input{appendix}
 \backmatter
 \input{backmatter}

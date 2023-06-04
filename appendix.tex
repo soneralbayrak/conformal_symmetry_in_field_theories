@@ -1,13 +1,15 @@
 \chapter{Mathematical Preliminaries}
-This appendix is a quick review of some parts of first chapter of \cite{vilenkin2012representation}.
-\section{The path from groups to algebras}
+\section{Set Theory}
+\section{Group Theory}
+This section is a quick review of some parts of first chapter of \cite{vilenkin2012representation}.
+\subsection{The path from groups to algebras}
 Below, we will construct our way starting from groups via the path
 \begin{multline}
 \text{group }\to\text{ ring }\to\text{ skew field }\to\text{ field }\to\text{ linear space }\\\to\text{linear algebra}\to\text{Lie algebra}
 \end{multline}
 This perspective will help us realize how central groups play a role in mathematics as well as physics.
-\subsection{Group}
-\paragraph{Definition:} A set of elements $g_i \in G$ such that
+\subsubsection{Group}
+Group $G$ is a set of elements $g_i \in G$ such that
 \begin{itemize}
 	\item $\exists$ a distinguished element $e$ such that $g*e=e*g=g,\; \forall g$
 	\item $\exists$ a mapping $g\to \hat g$ of G onto G such that $g*\hat g=\hat g*g=e$
@@ -26,8 +28,8 @@ A few useful information:
 \item The additive group of the ring $\Z_n=\{0,1,\dots,n-1\}$ is the cyclic group of order $n$.\footnote{One calls the additive group of the ring $\Z$ (the set of integers) \emph{the infinite cyclic group}.}
 \end{itemize}
 
-\subsection{Ring $=$ Commutative group with multiplication}
-\paragraph{Definition:} The group $R$ is a ring if
+\subsubsection{Ring $=$ Commutative group with multiplication}
+A group $R$ is a ring if
 \begin{itemize}
 	\item $R$ is commutative,
 	\item group operation is addition,
@@ -39,14 +41,13 @@ A few useful information:
 \end{itemize}
 For instance, $\Z$ (and the set $n\Z$, integers divisible by $n$) are rings under arithmetical addition and multiplication. The set $\Z_n=\{0,1,\dots,n-1\}$ is a ring under addition and multiplication modulo $n$.\footnote{We will see that it is also a field if $n$ is a prime number.}
 
-\subsection{Skew field $=$ Ring whose multiplication is a group}
+\subsubsection{Skew field $=$ Ring whose multiplication is a group}
 A ring $\kappa$ is a skew field if the set $\kappa\backslash \{0\}$ is a group under multiplication!
-\subsection{Field $=$ Skew field whose multiplication is commutative}
+\subsubsection{Field $=$ Skew field whose multiplication is commutative}
 A ring $\kappa$ is a field if the set $\kappa\backslash \{0\}$ is a commutative group under multiplication!\footnote{$\R$, $\C$, and $\Z_n$ for $n$ prime are examples to a field.}
 	
-
-\subsection{Linear space $=$ A commutative group over a field}
-\paragraph{Definition:}$\cL$ is a linear space over $\kappa$ if
+\subsubsection{Linear space $=$ A commutative group over a field}
+$\cL$ is a linear space over $\kappa$ if
 \begin{itemize}
 	\item  $\cL$ is a commutative group
 	\item $\kappa$ is a field
@@ -60,8 +61,8 @@ The maximal number of linearly independent vectors of a linear space $\cL$ is ca
 
 A set $\{e_\a\}$ of vectors forms a \emph{basis} of $\cL$ if for any $x\in \cL$ we have a unique linear combination $x=\lambda_\a e_\a$.\footnote{Any set of $n$ linearly independent vectors of $n-$dimensional linear space is a basis.}
 
-\paragraph{Example:} The set $\fM(m,n,\ka)$ of all $m\x n$ matrices from a field $\ka$ is a linear space over $\ka$ under element-wise addition and multiplication by field elements.\footnote{The dimension of this linear space is $m\x n$, with the matrices $e_{ij}=\delta_{ij}$ being a possible basis.}
-\subsection{Linear algebra $=$ A commutative ring over a field $=$ A linear space with multiplication among its elements}
+For instance, the set $\fM(m,n,\ka)$ of all $m\x n$ matrices from a field $\ka$ is a linear space over $\ka$ under element-wise addition and multiplication by field elements.\footnote{The dimension of this linear space is $m\x n$, with the matrices $e_{ij}=\delta_{ij}$ being a possible basis.}
+\subsubsection{Linear algebra $=$ A commutative ring over a field $=$ A linear space with multiplication among its elements}
 A linear space $\cL$ over a field $\ka$ is a linear algebra over $\ka$ if
 \begin{itemize}
 	\item There is element-wise multiplication of $\cL$, hence $\cL$ is a ring
@@ -73,8 +74,8 @@ e_i e_j=\sum\limits_k c^k_{ij}e_k
 \ee 
 to define a multiplication in the algebra.\footnote{
 $c^k_{ij}$ are called \emph{structure constants} of the algebra $\cL$.
-}
-\paragraph{Examples:}
+}\\\\
+\emph{Examples:}
 \begin{itemize}
 	\item The space $\fM(n,\ka)$ of all $n\x n$ matrices over the field $\ka$ is a linear algebra under matrix multiplication.\footnote{It is an associative and non-commutative algebra, e.g. $(a_{ij}b_{jk})c_{kl}=a_{ij}(b_{jk}c_{kl})$  and $a_{ij}b_{jk}\ne b_{ij}a_{jk}$ for matrices $a,b,c$.} The identity element is $I_n\coloneqq\diag(1,\dots,1)$ and we can choose $e_{ij}=\de_{ij}$ as the basis.\footnote{Note that element-wise multiplication becomes $e_{ij}e_{km}=\delta_{jk}e_{im}$ in this basis, hence the structure constants are $c^{rs}_{ij,km}=\delta_{ir}\delta_{jk}\delta_{ms}$.}
 	
@@ -94,72 +95,64 @@ In general, the space $\fM(n,\ka)$ is an associative linear algebra: $n\x n$ mat
 \ee 
 where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that every non-zero element are invertible in this algebra.
 \end{itemize}
-\subsection{Lie algebra $=$ A linear algebra whose element-wise multiplication is anticommutative}
+\subsubsection{Lie algebra $=$ A linear algebra whose element-wise multiplication is anticommutative}
+ A linear algebra $\cI$ over a field $\ka$ is a \emph{Lie algebra} if 
 \begin{itemize}
-	\item A linear algebra $\cI$ over a field $\ka$ is a \emph{Lie algebra} if 
-	\begin{itemize}
-		\item Multiplication in $\cI$ is anticommutative. They are denoted as $\comm{X}{Y}=-\comm{Y}{X}$ and are called commutator.
-		\item Elements satisfy \emph{Jacobi identity}:
-		\be 
-		\comm{X}{\comm{Y}{Z}}+\comm{Y}{\comm{Z}{X}}+\comm{Z}{\comm{X}{Y}}=0
-		\ee 
-	\end{itemize}
-	\item The structure constants of a Lie algebra satisfy the identities
+	\item Multiplication in $\cI$ is anticommutative. They are denoted as $\comm{X}{Y}=-\comm{Y}{X}$ and are called commutator.\footnote{If we have $\comm{X}{Y}=0$ for any elements $X,Y$ of a Lie algebra $\cI$, then $\cI$ is said to be \emph{commutative}.}
+	\item Elements satisfy \emph{Jacobi identity}:
 	\be 
-	c_{ij}^k=-c_{ji}^k\;,\quad \sum\limits_{j} \left(c_{ij}^lc_{km}^j+c_{mj}^lc_{ik}^j+c_{kj}^lc_{mi}^j\right)=0
+	\comm{X}{\comm{Y}{Z}}+\comm{Y}{\comm{Z}{X}}+\comm{Z}{\comm{X}{Y}}=0
 	\ee 
-	Conversely, any algebra whose structure constants satisfy these conditions is a Lie algebra.
-	\item If we have $\comm{X}{Y}=0$ for any elements $X,Y$ of a Lie algebra $\cI$, then $\cI$ is said to be \emph{commutative}.
-	\item Examples:
-	\begin{itemize}
-		\item We can obtain a \emph{Lie algebra} from any algebra $\cL$ over a field $\ka$ by choosing $\comm{X}{Y}=XY-YX$, if multiplication of $\cL$ is associative. With this construction, $\cI$ has same elements with $\cL$.
-		\item A concrete example of above explanation: the set $\fM(n,\ka)$ is a Lie algebra over $\ka$. The commutation relations for its basis matrices $e_{ij}$ and the structure constants are given as
-		\be 
-		\comm{e_{ij}}{e_{km}}=\delta_{jk}e_{im}-\delta_{mi}e_{kj}\;,\quad c^{rs}_{ij,km}=\delta_{ir}\delta_{jk}\delta_{ms}-\delta_{kr}\delta_{im}\delta_{js}
-		\ee 
-		\item The set of vectors in a three-dimensional space is a Lie algebra under vector multiplication.
-	\end{itemize}
+\end{itemize}
+The structure constants of a Lie algebra satisfy the identities\footnote{Conversely, any algebra whose structure constants satisfy these conditions is a Lie algebra.}
+\be 
+c_{ij}^k=-c_{ji}^k\;,\quad \sum\limits_{j} \left(c_{ij}^lc_{km}^j+c_{mj}^lc_{ik}^j+c_{kj}^lc_{mi}^j\right)=0
+\ee 
+\\\\
+\emph{Examples:}
+\begin{itemize}
+	\item We can obtain a \emph{Lie algebra} from any algebra $\cL$ over a field $\ka$ by choosing $\comm{X}{Y}=XY-YX$, if multiplication of $\cL$ is associative. With this construction, $\cI$ has same elements with $\cL$.\footnote{For instance, the set $\fM(n,\ka)$ (space of $n\x n$ matrices) is a Lie algebra over $\ka$. The commutation relations for its basis matrices $e_{ij}$ and the structure constants are given as
+		\bea
+		\comm{e_{ij}}{e_{km}}=&\delta_{jk}e_{im}-\delta_{mi}e_{kj}\;,
+		\\ c^{rs}_{ij,km}=&\delta_{ir}\delta_{jk}\delta_{ms}-\delta_{kr}\delta_{im}\delta_{js}
+		\eea}
+	\item The set of vectors in a three-dimensional space is a Lie algebra under vector multiplication.
 \end{itemize}
 
-\section{Subgroups and subalgebras}
-\subsection{Subgroup}
-\subsubsection{Basics}
+\subsection{Subgroups and subalgebras}
+\subsubsection{Subgroup}
+$H$ is called a subgroup of $G$ if
 \begin{itemize}
-	\item $H$ is subgroup of $G$ if
-	\begin{itemize}
-		\item $H$ is a nonempty set
-		\item $g_1g_2^{-1}\in H$ for all $g_1,g_2 \in H$
-	\end{itemize}
-	\item $H$ inherits the group operation of $G$.
-	\item A subgroup $N\subset G$ is said to be \emph{invariant} (or normal) if $gN=Ng$ for any $g\in G$. Here, $gN$ and $Ng$ denote cosets.\footnote{See \secref{\ref{sec:cosets}}.} Another way to look at this is as follows: $gNg^{-1}=N$, hence a general conjugation of an element of $N$ still leads to another element of $N$ if $N$ is a normal subgroup.
+	\item $H$ is a nonempty set
+	\item $g_1g_2^{-1}\in H$ for all $g_1,g_2 \in H$
+\end{itemize}
+where $H$ inherits the group operation of $G$.
+
+A subgroup $N\subset G$ is said to be \emph{invariant} (or normal) if one can always find two elements $n_{1,2}\in N$ for which $n_1g=gn_2$ for any  $g\in G$.\footnote{As we will see below, this statement can be rephrased as the cosets $Ng$ and $gN$ are equal for all $g\in G$.}\footnote{In other words, conjugation by any element of $G$ still maps the set $N$ to itself, i.e. $gng^{-1}\in N$ for any $n$ and $g$.}
+\\\\
+\emph{Some interesting points:}
+\begin{itemize}
 	\item Intersections of two subgoups of $G$ is also a subgroup of $G$.
 	\item To any subgroup $H,K\subset G$, there is their \emph{commutator subgroup}, denoted by $\comm{H}{K}$, and generated by $hkh^{-1}k^{-1}$ for $h\in H$ and $k\in K$. The subgroup $\comm{G}{G}$ is called \emph{commutator subgroup} of $G$.
 	\item The intersection of all subgroups containing a given set $A\subset G$ is a subgroup of $G$, and is called the \emph{group generated by $A$}.
 \end{itemize}
-\subsubsection{Cosets}
-\label{sec:cosets}
+\paragraph{Cosets}
+For the subgroup $H\subset G$ and an element $g\in G$, the sets $g H$ ($Hg$) are called left (right) cosets.\footnote{Left (right) cosets either coincide or are mutually distinct. Hence $G$ can be decomposed into different $gH$ or $Hg$.}
+
+The set of left (right) cosets is denoted as $G/H$ $(H\backslash G)$ and is called \emph{left coset space} (\emph{right coset space}) or \emph{left quotient space} (\emph{right quotient space}). Similarly, for the subgroups $H,K\subset G$, $HgK$ is said to be ``a $(H,K)$ two-sided coset'', denoted as $H\backslash G/K$.
+\paragraph{Centralizer \& Normalizer}
+The collection $Z(A)$ is said to be the centralizer of $A$ if
 \begin{itemize}
-	\item For the subgroup $H\subset G$ and the elemeng $g_1\in G$, the sets $g_1 H$ ($Hg_1$) are left (right) cosets.
-	\item Left (right) cosets are either coincide or mutually distinct. Hence $G$ can be decompose into different $g_1H$ or $Hg_1$.
-	\item The set of left cosets is denoted as $G/H$ and is called \emph{left coset space} or \emph{left quotient space}.
-	\item The set of right cosets is denoted as $H\backslash G$ and is called \emph{right coset space} or \emph{right quotient space}.
-	\item For the subgroups $H,K\subset G$, $HgK$ is said to be a $(H,K)$ two-sided coset. Set of these cosets and is denoted as $H\backslash G/K$
+	\item $A$ is a set of elements of a group $G$.
+	\item $Z(A)$ is the collection of all elements of $G$ which commute with every element of $A$
 \end{itemize}
-\subsubsection{Centralizer \& Normalizer}
+Centralizer of $A\subset G$, $Z(A)$, is a subgroup of $G$, which coincides with the centralizer of the subgroup generated by $A$.\footnote{In the extreme $A=G$ case, we obtain the \emph{center} of the group G, denoted by $Z\equiv Z(G)$.}
 \begin{itemize}
-	\item The collection $Z(A)$ is said to be the centralizer of $A$ if
-	\begin{itemize}
-		\item $A$ is a set of elements of a group $G$.
-		\item $Z(A)$ is the collection of all elements of $G$ which commute with every element of $A$.
-		\item Centralizer of $A\subset G$, $Z(A)$, is a subgroup of $G$.
-		\item Centralizer of $A\subset G$, $Z(A)$, coincides with the centralizer of the subgroup generated by $A$.
-		\item The centralizer of a group $G$ is said to be its \emph{center}, and denoted by $Z\equiv Z(G)$.
-	\end{itemize}
 	\item If $H$ is a subgroup of $G$, then the set of elements of $H$, which commute with every element of $A$, is said to be the \emph{centralizer} of $A$ in $H$.
 	\item The \emph{normalizer} of a subgroup $H'\subset G$ is collection of $g\in G$ such that $gH'=H'g$. In other words, the normalizer of a subgroup $H'\subset G$ is the maximal subgroup of $G$ in which $H'$ is an invariant subgroup.
 	\item If $H_{1,2}\subset G$ are two subgroups, one can define the normalizer of $H_1$ in $H_2$.
 \end{itemize}
-\subsubsection{Examples}
+\paragraph{Examples}
 \begin{itemize}
 	\item The additive groups $\bR$ of real numbers and $\bZ$ of integers are subgroups of the additive group $\bC$ of complex numbers.
 	\item The multiplicative groups $\bR_+$ of positive numbers and $\bT$ of numbers with absolute values equal to $1$ are subgroups of the multiplicative group $\bC\backslash\{0\}$ of complex numbers.
@@ -184,8 +177,8 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 	\item The center of the group $N_+(n,\ka)$ consists of the matrices of the form $I_n+\lambda e_{1n}$, where $\lambda \in \ka$.
 \end{itemize}
 
-\subsection{Subring, subfield, linear subspace, linear subalgebra}
-\subsubsection{Basics}
+\subsubsection{Subring, subfield, linear subspace, linear subalgebra}
+\paragraph{Basics}
 \begin{itemize}
 	\item Subring, subfield, linear subspace, linear subalgebra are defined analogous to the subgroup.
 	\item \textbf{Ideal}: A subring $J$ of a ring $R$ is said to be left (right) ideal of $R$ if $rJ\subset J$ ($Jr\subset J$) for any $r\in R$. 
@@ -201,7 +194,7 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 		\item If $\cI$ is a Lie algebra, then the centralizer of a subset $A$ consists of all elements $z$ such that $\comm{z}{a}=0$ for all $a\in A$. The centralizer of a Lie algebra $\cI$ is said to be its center. The Lie subalgebra $\comm{\cI_1}{\cI_2}$ generated by all elements of the form $\comm{x}{y}$, where $x\in \cI_1$ and $y\in \cI_2$, is said to be the \emph{commutator subalgebra} of Lie subalgebras $\cI_1$ and $\cI_2$.
 	\end{itemize}  
 \end{itemize}
-\subsubsection{Examples}
+\paragraph{Examples}
 \begin{itemize}
 	\item $\cL_1$ is a linear subspace of $\cL$ if
 	\begin{itemize}
@@ -217,9 +210,9 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 	\item The Lie algebra $\mathfrak{n}_+(n, \ka)$ of upper triangular matrices with $0$'s on the main diagonal is the commutator subalgebra of the Lie algebra $\mathfrak{s}_+(n, \ka)$ of upper triangular matrices with commutation operation $\comm{a}{b}=ab-ba$.
 \end{itemize}
 
-\section{Homomorphisms and automorphisms}
-\subsection{In groups}
-\subsubsection{Basics}
+\subsection{Homomorphisms and automorphisms}
+\subsubsection{In groups}
+\paragraph{Basics}
 \begin{itemize}
 	\item A mapping $f$ of a group $G_1$ into a group $G_2$ is said to be a \emph{homomorphism} if for any $g, h \in G_1$ we have $f(gh) = f(g)f(h)$.
 	\item A one-to-one homomorphism of $G_1$ onto $G_2$ is called an \emph{isomorphism}: we say that groups $G_1$ and $G_2$ are isomorphic.
@@ -238,7 +231,7 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 		\item The group $G$ decomposes into classes of mutually conjugate elements, and one of these classes is the set $\{e\}$.
 	\end{itemize}
 \end{itemize}
-\subsubsection{Representation of a group}
+\paragraph{Representation of a group}
 \begin{itemize}
 	\item A homomorphic mapping of a group $G$ into the group of transformations of
 	a set $X$ is called a \emph{representation} of the group by transformations of $X$. This mapping defines the \emph{action} of the group $G$ on $X$.
@@ -255,7 +248,7 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 	Note that the equation in the first case is well-defined: $$(g_1g_2\circ f)(x)=f((g_1g_2)^{-1}\circ x)=f(g_2^{-1}g_1^{-1}\circ x)=f_{g_2}(g_1^{-1}\circ x)=(g_1\circ f_{g_2})(x)=(g_1\circ (g_2\circ f))(x)$$
 	
 \end{itemize}
-\subsubsection{Examples}
+\paragraph{Examples}
 \begin{itemize}
 	\item Let $\bR$ be the additive group of real numbers, and $\bR^+$ be the multiplicative group of all positive real numbers. Since $a^{x+t}=a^xa^y$, then for given $a \ne 1$, $a>0$, the mapping $x\rightarrow a^x$ provides an isomorphism between $\bR$ and $\bR^+$.
 	\item The mapping $x\rightarrow e^{2\pi ix}$ of the additive group $\bR$ onto the multiplicative group $\bT$ is homomorphic. Its kernel coincides with the additive group $\bZ$ of integers.
@@ -270,8 +263,8 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 	ineffectiveness coinciding with the center $Z$ of $G$.
 	\item Any matrix from $\GL(n, \C)$ with simple eigenvalues is conjugate to a diagonal matrix.
 \end{itemize}
-\subsection{In rings, fields, linear spaces, and algebras}
-\subsubsection{Basics}
+\subsubsection{In rings, fields, linear spaces, and algebras}
+\paragraph{Basics}
 \begin{itemize}
 	\item Homomorphisms of linear spaces are called \emph{linear mappings}. In other words, a mapping $A:\fL_1\to \fL_2$ of a linear space $\fL_1$ over a field $\ka$ into a linear space $\fL_2$ over the same field is linear if for any $\lambda,\mu\in\ka$ and for any $x,y\in\fL_1$ one has the equality $A(\lambda \bx+\mu \by)=\lambda A\bx+\mu A\by$.
 	\item To every subspace $\fM_1\subset\fL_1$ there corresponds the set of linear mappings $A:\fL_1\to \fL_2$ such that $A(\fM_1) = 0$, and to every subspace $\fM_2\subset\fL_2$ there corresponds the set of linear mappings $A:\fL_1\to \fL_2$ such that $A(\fL_1)\subset\fM_2$ 
@@ -290,10 +283,10 @@ where $\a$ is the number of inversions for $(i,j,k)$ from $(1,2,3)$. Note that e
 	$$(\lambda A+\mu B)'=\lambda A'+\mu B'\;,\quad (A^{-1})'=(A')^{-1}\;,\quad (AB)'=B'A'$$
 \end{itemize}
 
-\chapter{A brief review of distributions}
+\section{Theory of Distributions}
 In this appendix, we briefly review the concept of distributions and present some of their properties.\footnote{For a rather pedagogical introduction, we refer the reader to \cite{strichartz2003guide}.}
 
-\section{Basics}
+\subsection{Basics}
 
 Let $\O$ be an open subset of $\R^n$. We then denote by $\cD(\O)$ the space of functions that vanish outside the bounded subset of $\O$ and whose all order partial derivatives are continuous.\footnote{In other words, $\cD(\O)$ is the algebra of $C^\infty-$functions with compact support on $\O$.} Such objects are also called \emph{test functions};\footnote{
 	For example,
@@ -363,7 +356,7 @@ as well. However, we should be careful while writing distributions as if they ar
 	Ultimately,	$\cR$ needs to change if one imbeds $\cD'(\R)$ to an associative algebra $\cA$; in fact, in such an imbedding, either the derivatives or the product of continuous functions cannot be preserved due to the famous \emph{impossibility result} of L. Schwartz \cite{michael1992multiplication}.
 }
 
-\section{More on intrinsic products of distributions}
+\subsection{More on intrinsic products of distributions}
 As we discussed above, it is not possible to define the multiplication of distributions while preserving generality; nevertheless, there are ways to do this for specific tempered distributions. An important category is when the distribution can be represented as the boundary value of a holomorphic function on $\C\backslash\R$ with support in the upper half plane: in this case, one just multiplies the holomorphic representatives and takes the boundary value of the product. As an example, consider $\de_+(x)$: this can be viewed as the boundary value of the function $\hat\de_+(z)$ defined as
 \be 
 \hat\de_+(z)=\left\{\begin{aligned}
@@ -405,7 +398,7 @@ where $\de^{(m)}(x)$ represents the $m-$th derivative of delta distribution. We 
 \ee
 which is indeed what we found by extending $\de_+(x)$ to $\hat\de_+(z)$.
 
-\section{Subtleties with tensor products of distributions}
+\subsection{Subtleties with tensor products of distributions}
 Compared to intrinsic products of distributions such as $\de(x)^2$, tensor products of distributions such as $\de(x)\de(y)$ are milder: we can define them in various ways, such as \emph{Fourier products}, \emph{strict products}, and \emph{model products} \cite{michael1992multiplication}. Nevertheless, they can also behave unexpectedly; indeed, we will reproduce below the discussion in \S18 of the latter reference, where it is shown that direct use of such products with differential equations can give incorrect results.
 
 We will illustrate this with a concrete example. Consider the system of partial differential equations:\footnote{This is an example of a semilinear hyperbolic system (which are used to model advection and nonlinear interaction). This particular model is also called \emph{the migrating predator-prey model}: it models two species moving along the $x-$axis with speeds $\pm 1$ and interacting upon collision. The system is interesting as it describes strong interaction, i.e. its solution does not split into a regular and a singular piece.}
